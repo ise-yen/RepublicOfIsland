@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public Transform[] abilityText;
     #endregion
 
+    public GameObject eventPagePrefab;
+
     private void Awake()
     {
         if(instance == null)
