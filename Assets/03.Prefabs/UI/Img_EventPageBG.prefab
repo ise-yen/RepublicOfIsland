@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 3908169122029363065}
   - component: {fileID: 3908169122029363071}
   - component: {fileID: 3908169122029363070}
+  - component: {fileID: 947941012751289427}
   m_Layer: 5
   m_Name: Img_EventPageBG
   m_TagString: Untagged
@@ -463,6 +464,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &947941012751289427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908169122029363064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32aa4a90d89e1c444acd13f7d7cb9e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 3908169121760388655}
+  - {fileID: 3908169123172056766}
+  - {fileID: 3908169123200290180}
 --- !u!1 &3908169122135230150
 GameObject:
   m_ObjectHideFlags: 0
