@@ -28,9 +28,9 @@ public class RayHitting : MonoBehaviour
             {
                 Debug.Log("================================");
                 Debug.Log("Object Name : " + hit.collider.gameObject.name);
-                Debug.Log("ray hit Diastance : " + hit.distance);
-                Debug.Log("ray hit Normal : " + hit.normal);
-                Debug.Log("Object Transform : " + hit.transform.position);
+                //Debug.Log("ray hit Diastance : " + hit.distance);
+                //Debug.Log("ray hit Normal : " + hit.normal);
+                //Debug.Log("Object Transform : " + hit.transform.position);
             }
         }
     }
