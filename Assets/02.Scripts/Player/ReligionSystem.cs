@@ -5,6 +5,8 @@ using UnityEngine;
 public class ReligionSystem : MonoBehaviour
 {
     //Enum
+    enum Religions { Catholic, Christian, Islam } //종교 종류
+    //Religions mainReligion; //메인 종교
     string[] religions = new string[] { "Catholic", "Christian", "Islam" }; // 종교 종류
     string mainReligion;
     public int religionSupport; //종교지지도
