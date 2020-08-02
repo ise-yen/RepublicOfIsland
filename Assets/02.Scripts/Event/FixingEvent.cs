@@ -29,17 +29,20 @@ public class FixingEvent : MonoBehaviour
         if (count == 1)
         {
             WelcomeEvent();
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.administrativePower, 1);
+                Debug.Log("확인1");
+                //AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.administrativePower, 1);
             }
-            if (Input.GetKeyDown(KeyCode.Keypad2))
+            if (Input.GetKeyDown(KeyCode.B))
             {
-                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.economicPower, 1);
+                Debug.Log("확인2");
+                //AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.economicPower, 1);
             }
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.warMachine, 1);
+                Debug.Log("확인3");
+                //AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.warMachine, 1);
             }
         }
         if (count == 2) MafiaEvent();

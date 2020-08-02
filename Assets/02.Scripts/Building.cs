@@ -27,7 +27,7 @@ public class Building : MonoBehaviour
 
     public void Court()
     {
-
+        //재화 money, 브리킷 brikit, 행정력, 식량 food
     }
 
     public void Church()
