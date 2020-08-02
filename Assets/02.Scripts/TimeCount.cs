@@ -22,14 +22,13 @@ public class TimeCount : MonoBehaviour
 
     public void TimeUp()
     {
-            if (month == 12)
-            {
-                month = 1;
-                year++;
-            }
-            else
-                month++;
-            Debug.Log(year + "년 " + month + "일");
-
+        if (month == 12)
+        {
+            month = 1;
+            year++;
+        }
+        else
+            month++;
+        Debug.Log(year + "년 " + month + "일");
     }
 }

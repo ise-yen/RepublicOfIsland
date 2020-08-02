@@ -15,28 +15,29 @@ public class FixingEvent : MonoBehaviour
 
     void Update()
     {
-        while (true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                TimeCount.instance.TimeUp();
-                count++;
-                if (count == 1) WelcomeEvent();
-                if (count == 2) MafiaEvent();
-                if (count == 13) NewYearEvent();
-                if (count == 27) KingGraceEvent();
-                if (count == 52) KingThinkEvent();
-                if (count == 57) KingMarryEvent();
-                if (count == 61) MurderEvent();
-                if (count == 62) CleanEvent();
-                if (count == 12 * 8) TrashEvent();
-                if (count == 109) OppositionEvent();
-                if (count == 121) TenEvent(); break;
-            }
+            OccuringEvent();
         }
 
     }
 
+    void OccuringEvent()
+    {
+        TimeCount.instance.TimeUp();
+        count++;
+        if (count == 1) WelcomeEvent();
+        if (count == 2) MafiaEvent();
+        if (count == 13) NewYearEvent();
+        if (count == 27) KingGraceEvent();
+        if (count == 52) KingThinkEvent();
+        if (count == 57) KingMarryEvent();
+        if (count == 61) MurderEvent();
+        if (count == 62) CleanEvent();
+        if (count == 12 * 8) TrashEvent();
+        if (count == 109) OppositionEvent();
+        if (count == 121) TenEvent();
+    }
 
     void WelcomeEvent()
     {

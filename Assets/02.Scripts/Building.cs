@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SystemManager : MonoBehaviour
+public class Building : MonoBehaviour
 {
-    public static SystemManager instance;
-    public enum SystemState { Tax, Dissatisfy, Comfort, Crime, Trade, Food }
+    public static Building instance;
+    public enum BuildingType { Town, Farm, Harbor, Court, Market, Guild, Church, Castle, FoodWarehouse }
 
     private void Awake()
     {
@@ -20,5 +20,8 @@ public class SystemManager : MonoBehaviour
         }
     }
 
+    public void BuildBuilding()
+    {
 
+    }
 }

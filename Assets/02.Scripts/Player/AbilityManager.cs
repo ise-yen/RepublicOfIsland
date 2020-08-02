@@ -5,7 +5,6 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     public static AbilityManager instance;
-
     public enum PlayerAbility { administrativePower=2, economicPower = 2, warMachine = 2 }
 
     private void Awake()

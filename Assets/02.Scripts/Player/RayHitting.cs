@@ -18,7 +18,7 @@ public class RayHitting : MonoBehaviour
         ClickObject();
     }
 
-    void ClickObject()
+    public void ClickObject()
     {
         if (Input.GetMouseButtonDown(0))
         {
