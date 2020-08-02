@@ -24,4 +24,9 @@ public class Building : MonoBehaviour
     {
 
     }
+
+    public void CourtAbility()
+    {
+
+    }
 }
