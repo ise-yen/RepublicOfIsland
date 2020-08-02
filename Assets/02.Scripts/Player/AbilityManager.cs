@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     public static AbilityManager instance;
-    public enum PlayerAbility { administrativePower=2, economicPower = 2, warMachine = 2 }
+    public enum PlayerAbility { administrativePower = 2, economicPower = 2, warMachine = 2 }
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class AbilityManager : MonoBehaviour
     public void ObtainAbility(PlayerAbility a, int add)
     {
         Debug.Log("능력치가 <" + add + ">만큼 추가되었습니다.");
-        Debug.Log("능력치: " + a + add);
+        Debug.Log("능력치: " + (int)a + add);
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SystemManager : MonoBehaviour
 {
     public static SystemManager instance;
-    public enum SystemState { Tax, Dissatisfy, Comfort, Crime, Trade, Food }
+    public enum SystemState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
 
     private void Awake()
     {

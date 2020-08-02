@@ -26,7 +26,22 @@ public class FixingEvent : MonoBehaviour
     {
         TimeCount.instance.TimeUp();
         count++;
-        if (count == 1) WelcomeEvent();
+        if (count == 1)
+        {
+            WelcomeEvent();
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.administrativePower, 1);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.economicPower, 1);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.warMachine, 1);
+            }
+        }
         if (count == 2) MafiaEvent();
         if (count == 13) NewYearEvent();
         if (count == 27) KingGraceEvent();
@@ -45,18 +60,6 @@ public class FixingEvent : MonoBehaviour
         Debug.Log("1. 행정력 +1");
         Debug.Log("2. 경제력 +1");
         Debug.Log("3. 군사력 +1");
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.administrativePower, 1);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.economicPower, 1);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.warMachine, 1);
-        }
 
     }
 
@@ -146,7 +149,7 @@ public class FixingEvent : MonoBehaviour
     {
         Debug.Log("범죄X");
         Debug.Log("1. 브리킷 -100, 범죄률 -5%");
-        Debug.Log("2. 브리킷 +30, 법원 건설 -50");
+        Debug.Log("2. 법원 건설 -50");
         Debug.Log("3. 브리킷 +30, 범죄률 +5%");
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {

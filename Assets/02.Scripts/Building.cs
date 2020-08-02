@@ -25,7 +25,12 @@ public class Building : MonoBehaviour
 
     }
 
-    public void CourtAbility()
+    public void Court()
+    {
+
+    }
+
+    public void Church()
     {
 
     }
