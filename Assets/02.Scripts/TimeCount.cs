@@ -5,8 +5,9 @@ using UnityEngine;
 public class TimeCount : MonoBehaviour
 {
     public static TimeCount instance;
-    public int year=1400;
-    public int month=0;
+    public int year = 1400;
+    public int month = 0;
+    public int count = 0;
     private void Awake()
     {
         if (instance == null)
@@ -30,5 +31,6 @@ public class TimeCount : MonoBehaviour
         else
             month++;
         Debug.Log(year + "년 " + month + "일");
+        count++;
     }
 }

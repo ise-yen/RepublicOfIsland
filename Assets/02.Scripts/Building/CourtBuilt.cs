@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CourtFacility : MonoBehaviour
+public class CourtBuilt : MonoBehaviour
 {
     //건설에 사용되는 재화 종류
     public int brikit = 1000; //브리킷
@@ -27,13 +27,14 @@ public class CourtFacility : MonoBehaviour
             BuildFirstCourt();
             BuildSecondCourt();
             BuildThirdCourt();
+            Debug.Log("법원 건설 완료");
         }
     }
 
     public void BuildFirstCourt()
     {
         RayHitting.instance.ClickObject();
-        if(RayHitting.instance.SelectObj.name == "Plane")
+        if(RayHitting.instance.SelectObj.name == "CourtPlane")
         {
             brikit = brikit - 100;
             administrativePower = administrativePower - 250;
