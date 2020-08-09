@@ -5,8 +5,22 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
-    private void Start()
+    public void OnClickButton(string param)
     {
-        GetComponent<Button>().onClick.AddListener(() => { RoundManager.instance.EndRound("눈이 녹고 있는 중"); });
+        switch(param)
+        {
+            case "Close":
+                transform.parent.gameObject.SetActive(false);
+                break;
+            case "RoundEnd":
+                RoundManager.instance.EndRound("눈이 녹고 있는 중");
+                break;
+            case "ShowEventData":
+                UIManager.instance.ShowEventDataList();
+                break;
+            case "NewGame":
+                GlobalManager.instance.StartGame();
+                break;
+        }
     }
 }

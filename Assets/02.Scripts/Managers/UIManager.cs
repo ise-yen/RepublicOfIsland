@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI endingText;
 
+    public GameObject eventDataPanel;
+
     string[] example = { "왕은 똑똑해야지!", "왕도 돈이 있어야 돼!", "왕은 힘이 제일이지!" };
 
     private void Awake()
@@ -97,5 +99,10 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         endingText.enabled = false;
+    }
+
+    public void ShowEventDataList()
+    {
+        eventDataPanel.SetActive(true);
     }
 }
