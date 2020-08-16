@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckObj : MonoBehaviour
+public class TaxSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //세금 시스템
+    public int tax = 0;
     void Start()
     {
         
@@ -13,6 +14,6 @@ public class CheckObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RayHitting.instance.ClickObject();
+        
     }
 }

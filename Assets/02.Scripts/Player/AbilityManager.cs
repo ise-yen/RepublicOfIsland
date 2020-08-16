@@ -5,6 +5,7 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     public static AbilityManager instance;
+    //왕의 능력치: 행정력, 경제력, 군사력
     public enum PlayerAbility { administrativePower = 2, economicPower = 2, warMachine = 2 }
 
     private void Awake()

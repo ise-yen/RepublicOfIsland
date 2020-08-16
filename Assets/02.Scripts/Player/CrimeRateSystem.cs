@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CrimeRateSystem : MonoBehaviour
 {
-    int crimeRate = 2; //범죄율(%)
+    //범죄율 시스템
+    public int crimeRate = 2; //범죄율(%)
     private StabilitySystem stabilitySystem;
 
     void Start()

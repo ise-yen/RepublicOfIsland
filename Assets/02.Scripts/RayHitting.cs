@@ -14,8 +14,7 @@ public class RayHitting : MonoBehaviour
     public GameObject SelectObj {
         get { return SelectObject; }
         set { SelectObject = value; }
-    } //선택한 블럭
-    
+    }
 
     private void Awake()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CourtBuilt : MonoBehaviour
 {
     //건설에 사용되는 재화 종류
-    public int brikit = 1000; //브리킷
+    //public int brikit = 1000; //브리킷
     public int administrativePower = 1000; //행정력
     public int food = 10; //식량
 
@@ -13,6 +13,10 @@ public class CourtBuilt : MonoBehaviour
     public GameObject FirstCourt;
     public GameObject SecondCourt;
     public GameObject ThirdCourt;
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
@@ -28,9 +32,10 @@ public class CourtBuilt : MonoBehaviour
     public void BuildFirstCourt()
     {
         RayHitting.instance.ClickObject();
+        //if(RayHitting.instance.ClickObject().SelectObj.name)
         if(RayHitting.instance.SelectObj.name == "CourtPlane")
         {
-            brikit = brikit - 100;
+            briket = briket - 100;
             administrativePower = administrativePower - 250;
             food = food - 1;
             Debug.Log("잔여 브리킷: " + brikit);

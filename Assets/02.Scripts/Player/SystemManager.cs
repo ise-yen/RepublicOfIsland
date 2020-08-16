@@ -5,7 +5,14 @@ using UnityEngine;
 public class SystemManager : MonoBehaviour
 {
     public static SystemManager instance;
-    public enum SystemState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
+
+    //브리킷, 세금, 불만도, 안정도, 범죄율, 무역력
+    public float briket;
+    public float dissatisfyRate;
+    public float stabilityRate;
+    public float crimeRate;
+    public float tradeRate;
+    //public enum SystemState { Briket, DissatisfyRate, StabilityRate, CrimeRate, TradeRate }
 
     private void Awake()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StabilitySystem : MonoBehaviour
 {
+    //안정도 시스템
     public int stability = 0; //안정도: 0으로 시작해서 -가 됨
     //종교 지지도랑 안정도 연결
     void Start()
