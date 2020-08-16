@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class TaxSystem : MonoBehaviour
 {
-    //세금 시스템
-    public int tax = 0;
+    //세금(브리킷) 시스템
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void PeriodicTax()
+    {
+        //brikit = brikit + 3;
     }
 }

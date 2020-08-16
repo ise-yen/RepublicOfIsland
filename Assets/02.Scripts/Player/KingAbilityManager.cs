@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityManager : MonoBehaviour
+public class KingAbilityManager : MonoBehaviour
 {
-    public static AbilityManager instance;
+    public static KingAbilityManager instance;
     //왕의 능력치: 행정력, 경제력, 군사력
     public enum PlayerAbility { administrativePower = 2, economicPower = 2, warMachine = 2 }
 

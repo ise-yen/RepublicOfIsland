@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-public class CrimeRateSystem : MonoBehaviour
+using UnityEnginpublic class CrimeRateSystem : MonoBehaviour
 {
     //범죄율 시스템
     public int crimeRate = 2; //범죄율(%)
