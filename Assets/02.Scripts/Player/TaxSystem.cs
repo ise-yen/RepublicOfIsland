@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TaxSystem : MonoBehaviour
 {
-    //세금(브리킷) 시스템
+    //세금(=브리킷) 시스템
     void Start()
     {
-        
     }
 
     void Update()
@@ -17,6 +16,7 @@ public class TaxSystem : MonoBehaviour
 
     void PeriodicTax()
     {
-        //brikit = brikit + 3;
+        //라운드당 +3씩 증가
+        PlayStatManager.instance.Tax += 3;
     }
 }

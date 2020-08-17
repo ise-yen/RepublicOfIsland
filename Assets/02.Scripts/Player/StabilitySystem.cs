@@ -9,7 +9,6 @@ public class StabilitySystem : MonoBehaviour
     //종교 지지도랑 안정도 연결
     void Start()
     {
-        
     }
 
     void Update()
