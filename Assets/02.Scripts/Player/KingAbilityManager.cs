@@ -30,6 +30,11 @@ public class KingAbilityManager : MonoBehaviour
             return;
         }
     }
+
+    private void Update()
+    {
+        UIManager.instance.SetAbilityUI(administrativePower, economicPower, warPower);
+    }
     /*
     public void ObtainAbility(PlayerAbility a, int add)
     {

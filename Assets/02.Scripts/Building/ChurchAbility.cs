@@ -6,17 +6,61 @@ public class ChurchAbility : MonoBehaviour
 {
     void Update()
     {
+
+
         if (ReligionManager.instance.religionState == ReligionManager.Religion.Catholic)
         {
-            FirstCatholicPassive();
+            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            {
+                FirstCatholicPassive();
+                FirstCatholicActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court1")
+            {
+                SecondCatholicPassive();
+                SecondCatholicActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court2")
+            {
+                ThirdCatholicPassive();
+                ThirdCatholicActive();
+            }
         }
         else if (ReligionManager.instance.religionState == ReligionManager.Religion.Christian)
         {
-            FirstChristianPassive();
+            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            {
+                FirstChristianPassive();
+                FirstChristianActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court1")
+            {
+                SecondChristianPassive();
+                SecondChristianActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court2")
+            {
+                ThirdChristianPassive();
+                ThirdChristianActive();
+            }
         }
         else if (ReligionManager.instance.religionState == ReligionManager.Religion.Islam)
         {
-            FirstIslamPassive();
+            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            {
+                FirstIslamPassive();
+                FirstIslamActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court1")
+            {
+                SecondIslamPassive();
+                SecondIslamActive();
+            }
+            else if (RayHitting.instance.SelectObj.name == "Court2")
+            {
+                ThirdIslamPassive();
+                ThirdIslamActive();
+            }
         }
     }
     //가톨릭 효과
