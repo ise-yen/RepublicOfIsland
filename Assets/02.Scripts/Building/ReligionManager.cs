@@ -37,13 +37,6 @@ public class ReligionManager : MonoBehaviour
             return;
         }
     }
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-    }
 
     public int StatingReligion(Religion religionState)
     {
@@ -61,7 +54,6 @@ public class ReligionManager : MonoBehaviour
         }
 
         Debug.Log("초기 메인 종교: " + mainReligion);
-        Debug.Log("[천주교/기독교/이슬람] : " + catholic + "%/" + christian + "%/" + islam + "%");
         return mainReligion;
     }
 
