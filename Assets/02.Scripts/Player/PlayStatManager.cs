@@ -17,7 +17,7 @@ public class PlayStatManager : MonoBehaviour
     public float DissatisfyRate { get { return dissatisfyRate; } set { dissatisfyRate = value; } }
 
     public float comfortRate = 0;
-    public float ComfortyRate { get { return comfortRate; } set { comfortRate = value; } }
+    public float ComfortRate { get { return comfortRate; } set { comfortRate = value; } }
     
     public float crimeRate = 2;
     public float CrimeRate { get { return crimeRate; } set { crimeRate = value; } }
