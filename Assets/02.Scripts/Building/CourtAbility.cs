@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class CourtAbility : MonoBehaviour
 {
-    int crimeRate;
-    int military;
-
-    void Start()
-    {
-        crimeRate = 20;
-        military = 0;
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
