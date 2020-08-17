@@ -49,11 +49,11 @@ public class CourtBuilt : MonoBehaviour
         //if(RayHitting.instance.ClickObject().SelectObj.name)
         if(RayHitting.instance.SelectObj.name == "CourtPlane")
         {
-            PlayStatManager.instance.Tax -= 100;
+            PlayStatManager.instance.Briket -= 100;
             KingAbilityManager.instance.AdministrativePower -= 250;
             PlayStatManager.instance.Food -= 1;
 
-            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Tax);
+            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
             Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
             Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
             FirstCourt.SetActive(true);
@@ -65,11 +65,11 @@ public class CourtBuilt : MonoBehaviour
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj.name == "Court1")
         {
-            PlayStatManager.instance.Tax -= 200;
+            PlayStatManager.instance.Briket -= 200;
             KingAbilityManager.instance.AdministrativePower -= 450;
             PlayStatManager.instance.Food -= 2;
 
-            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Tax);
+            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
             Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
             Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
             FirstCourt.SetActive(false);
@@ -82,11 +82,11 @@ public class CourtBuilt : MonoBehaviour
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj.name == "Court2")
         {
-            PlayStatManager.instance.Tax -= 300;
+            PlayStatManager.instance.Briket -= 300;
             KingAbilityManager.instance.AdministrativePower -= 600;
             PlayStatManager.instance.Food -= 3;
 
-            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Tax);
+            Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
             Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
             Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
             SecondCourt.SetActive(false);

@@ -4,21 +4,6 @@ using UnityEngine;
 
 public class ChurchAbility : MonoBehaviour
 {
-    int crimeRates;
-    int militarys;
-    int tax;
-    int stabilitys;
-    int brekits;
-    int religionship;
-
-    void Start()
-    {
-        crimeRates = 20;
-        militarys = 0;
-        tax = 0;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,26 +26,26 @@ public class ChurchAbility : MonoBehaviour
     //교회 단계별 지속 효과
     void FirstChurchPassive()
     {
-        tax = tax + 1;
+        PlayStatManager.instance.Tax += 1;
         Debug.Log("<1단계 교회 능력>");
-        Debug.Log("세금: " + tax);
-        Debug.Log("군대: " + militarys);
+        Debug.Log("세금: " + PlayStatManager.instance.Tax);
+        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
     }
     void SecondChurchPassive()
     {
-        tax = tax + 3;
-        militarys = militarys + 100;
+        PlayStatManager.instance.Tax += 3;
+        //KingAbilityManager.instance.WarPower += 100;
         Debug.Log("<2단계 교회 능력>");
-        Debug.Log("세금: " + tax);
-        Debug.Log("군대: " + militarys);
+        Debug.Log("세금: " + PlayStatManager.instance.Tax);
+        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
     }
 
     void ThirdChurchPassive()
     {
-        tax = tax + 5;
-        militarys = militarys + 300;
+        PlayStatManager.instance.Tax += 5;
+        //KingAbilityManager.instance.WarPower += 300;
         Debug.Log("<3단계 교회 능력>");
-        Debug.Log("세금: " + tax);
-        Debug.Log("군대: " + militarys);
+        Debug.Log("세금: " + PlayStatManager.instance.Tax);
+        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
     }
 }

@@ -6,7 +6,10 @@ public class PlayStatManager : MonoBehaviour
 {
     public static PlayStatManager instance;
 
-    //세금, 불만도, 안정도, 범죄율, 무역력, 식량
+    //브리킷, 세금, 불만도, 안정도, 범죄율, 무역력, 식량
+    public float briket = 0;
+    public float Briket { get { return briket; } set { briket = value; } }
+
     public float tax = 0;
     public float Tax { get { return tax; } set { tax = value; } }
 
