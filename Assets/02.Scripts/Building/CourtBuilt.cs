@@ -11,9 +11,9 @@ public class CourtBuilt : MonoBehaviour
     public GameObject SecondCourt;
     public GameObject ThirdCourt;
 
-    public enum CourtState { Zerocourt, Firstcourt, Secondcourt, Thirdcourt }
+    //public enum CourtState { Zerocourt, Firstcourt, Secondcourt, Thirdcourt }
 
-    CourtState courtState = CourtState.Zerocourt;
+    //CourtState courtState = CourtState.Zerocourt;
 
     void Update()
     {
