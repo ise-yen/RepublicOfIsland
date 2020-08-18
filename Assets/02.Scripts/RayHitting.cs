@@ -12,9 +12,10 @@ public class RayHitting : MonoBehaviour
     
     //클릭한 오브젝트를 다른 스크립트에서 접근 가능하도록 세팅
     public GameObject SelectObj {
-        get { return SelectObject; }
+        get { return SelectObject;  }
         set { SelectObject = value; }
-    }
+    } //선택한 블럭
+    
 
     private void Awake()
     {
@@ -29,7 +30,6 @@ public class RayHitting : MonoBehaviour
         }
     }
 
-    //오브젝트 클릭
     public void ClickObject()
     {
         if (Input.GetMouseButtonDown(0))

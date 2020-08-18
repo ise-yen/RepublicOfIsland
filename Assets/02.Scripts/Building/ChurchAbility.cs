@@ -4,277 +4,63 @@ using UnityEngine;
 
 public class ChurchAbility : MonoBehaviour
 {
+    int crimeRates;
+    int militarys;
+    int tax;
+    int stabilitys;
+    int brekits;
+    int religionship;
+
+    void Start()
+    {
+        crimeRates = 20;
+        militarys = 0;
+        tax = 0;
+    }
+
+    // Update is called once per frame
     void Update()
     {
-
-
-        if (ReligionManager.instance.religionState == ReligionManager.Religion.Catholic)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            if (gameObject.name == "Church1")
             {
-                FirstCatholicPassive();
-                FirstCatholicActive();
+                FirstChurchPassive();
             }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
+            if (gameObject.name == "Church2")
             {
-                SecondCatholicPassive();
-                SecondCatholicActive();
+                SecondChurchPassive();
             }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
+            if (gameObject.name == "Church3")
             {
-                ThirdCatholicPassive();
-                ThirdCatholicActive();
-            }
-        }
-        else if (ReligionManager.instance.religionState == ReligionManager.Religion.Christian)
-        {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
-            {
-                FirstChristianPassive();
-                FirstChristianActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
-            {
-                SecondChristianPassive();
-                SecondChristianActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
-            {
-                ThirdChristianPassive();
-                ThirdChristianActive();
-            }
-        }
-        else if (ReligionManager.instance.religionState == ReligionManager.Religion.Islam)
-        {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
-            {
-                FirstIslamPassive();
-                FirstIslamActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
-            {
-                SecondIslamPassive();
-                SecondIslamActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
-            {
-                ThirdIslamPassive();
-                ThirdIslamActive();
+                ThirdChurchPassive();
             }
         }
     }
-    //가톨릭 효과
-    //지속효과
-    void FirstCatholicPassive()
+
+    //교회 단계별 지속 효과
+    void FirstChurchPassive()
     {
-        //지속효과1
-        PlayStatManager.instance.Tax += 1;
+        tax = tax + 1;
         Debug.Log("<1단계 교회 능력>");
-        Debug.Log("세금: " + PlayStatManager.instance.Tax);
-        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
+        Debug.Log("세금: " + tax);
+        Debug.Log("군대: " + militarys);
     }
-    void SecondCatholicPassive()
+    void SecondChurchPassive()
     {
-        //지속효과1
-        PlayStatManager.instance.Tax += 3;
-        //지속효과2 //KingAbilityManager.instance.WarPower += 100;
+        tax = tax + 3;
+        militarys = militarys + 100;
         Debug.Log("<2단계 교회 능력>");
-        Debug.Log("세금: " + PlayStatManager.instance.Tax);
-        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
+        Debug.Log("세금: " + tax);
+        Debug.Log("군대: " + militarys);
     }
 
-    void ThirdCatholicPassive()
+    void ThirdChurchPassive()
     {
-        //지속효과1
-        PlayStatManager.instance.Tax += 5;
-        //지속효과2 //KingAbilityManager.instance.WarPower += 300;
+        tax = tax + 5;
+        militarys = militarys + 300;
         Debug.Log("<3단계 교회 능력>");
-        Debug.Log("세금: " + PlayStatManager.instance.Tax);
-        //Debug.Log("군대: " + KingAbilityManager.instance.WarPower);
-    }
-
-    //액티브효과
-    void FirstCatholicActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.ComfortRate += 1;
-        Debug.Log("안정도: " + PlayStatManager.instance.ComfortRate);
-        KingAbilityManager.instance.AdministrativePower -= 200;
-
-        //액티브효과2
-        PlayStatManager.instance.Briket += 50;
-        Debug.Log("브리킷: " + PlayStatManager.instance.Briket);
-        KingAbilityManager.instance.AdministrativePower -= 100;
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 1;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void SecondCatholicActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.ComfortRate += 1;
-        Debug.Log("안정도: " + PlayStatManager.instance.ComfortRate);
-        KingAbilityManager.instance.AdministrativePower -= 150;
-
-        //액티브효과2
-        PlayStatManager.instance.Briket += 75;
-        Debug.Log("브리킷: " + PlayStatManager.instance.Briket);
-        KingAbilityManager.instance.AdministrativePower -= 100;
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 2;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void ThirdCatholicActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.ComfortRate += 1;
-        Debug.Log("안정도: " + PlayStatManager.instance.ComfortRate);
-        KingAbilityManager.instance.AdministrativePower -= 100;
-
-        //액티브효과2
-        PlayStatManager.instance.Briket += 100;
-        Debug.Log("브리킷: " + PlayStatManager.instance.Briket);
-        KingAbilityManager.instance.AdministrativePower -= 100;
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 3;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-
-
-    //기독교 효과
-    //지속효과
-    void FirstChristianPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.CrimeRate -= 2;
-        Debug.Log("<1단계 교회 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
-    }
-    void SecondChristianPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.CrimeRate -= 3;
-        //지속효과2
-        PlayStatManager.instance.ComfortRate += 1;
-        Debug.Log("<2단계 교회 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
-        Debug.Log("안정도: " + PlayStatManager.instance.ComfortRate);
-    }
-
-    void ThirdChristianPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.CrimeRate -= 5;
-        //지속효과2
-        PlayStatManager.instance.ComfortRate += 3;
-        Debug.Log("<3단계 교회 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
-        Debug.Log("안정도: " + PlayStatManager.instance.ComfortRate);
-    }
-
-    //액티브효과
-    void FirstChristianActive()
-    {
-        //액티브효과1
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 1;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void SecondChristianActive()
-    {
-        //액티브효과1
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 2;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void ThirdChristianActive()
-    {
-        //액티브효과1
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 3;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-
-    //이슬람 효과
-    void FirstIslamPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.Food += 3;
-        Debug.Log("<1단계 교회 능력>");
-        Debug.Log("식량: " + PlayStatManager.instance.Food);
-    }
-    void SecondIslamPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.Food += 5;
-        Debug.Log("<2단계 교회 능력>");
-        Debug.Log("식량: " + PlayStatManager.instance.Food);
-    }
-
-    void ThirdIslamPassive()
-    {
-        //지속효과1
-        PlayStatManager.instance.Food += 7;
-        Debug.Log("<3단계 교회 능력>");
-        Debug.Log("식량: " + PlayStatManager.instance.Food);
-    }
-
-    //액티브효과
-    void FirstIslamActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.TradeRate += 1;
-        Debug.Log("무역력: " + PlayStatManager.instance.TradeRate);
-        KingAbilityManager.instance.AdministrativePower -= 150;
-
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 1;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void SecondIslamActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.TradeRate += 3;
-        Debug.Log("무역력: " + PlayStatManager.instance.TradeRate);
-        KingAbilityManager.instance.AdministrativePower -= 150;
-
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 2;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
-    }
-    void ThirdIslamActive()
-    {
-        //액티브효과1
-        PlayStatManager.instance.TradeRate += 5;
-        Debug.Log("무역력: " + PlayStatManager.instance.TradeRate);
-        KingAbilityManager.instance.AdministrativePower -= 150;
-
-        //액티브효과2
-
-        //액티브효과3
-        ReligionManager.instance.MainReligion += 3;
-        Debug.Log("종교 지지도: " + ReligionManager.instance.MainReligion);
-        KingAbilityManager.instance.AdministrativePower -= 50;
+        Debug.Log("세금: " + tax);
+        Debug.Log("군대: " + militarys);
     }
 }
