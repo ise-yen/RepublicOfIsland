@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class EventPage : MonoBehaviour
 {
     public GameObject[] buttons;
 
     public Text titleText;
+    public Text contentsText;
 
     public Text[] selectTexts;
     public EventPageAdditionalBox[] additionalTexts;
@@ -17,7 +17,7 @@ public class EventPage : MonoBehaviour
 
     private void Awake()
     {
-        foreach(GameObject go in buttons)
+        foreach (GameObject go in buttons)
         {
             go.GetComponent<Button>().onClick.AddListener(() => OnClickButton());
         }
@@ -25,9 +25,15 @@ public class EventPage : MonoBehaviour
         additionalTexts = GetComponentsInChildren<EventPageAdditionalBox>();
     }
 
-    public void InitPage(string titleParam, string[] selectParam, string[] additionParam)
+    public void InitPage(EventType eventType)
     {
-        titleText.text = titleParam;
+        string title = eventType.title;
+        string content = eventType.eventContents;
+        string[] selectParam = eventType.eventSelection;
+        string[] additionalParam = eventType.eventAdditionalBox;
+
+        titleText.text = title;
+        contentsText.text = content;
 
         for (int i = 0; i < 3; i++)
         {
@@ -35,10 +41,10 @@ public class EventPage : MonoBehaviour
             additionalTexts[i].str_Instruction = null;
         }
 
-            for (int i =0; i< selectTexts.Length; i++)
+        for (int i = 0; i < selectParam.Length; i++)
         {
             selectTexts[i].text = selectParam[i];
-            additionalTexts[i].str_Instruction = additionParam[i];
+            additionalTexts[i].str_Instruction = additionalParam[i];
         }
     }
 
