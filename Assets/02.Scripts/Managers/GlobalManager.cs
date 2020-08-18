@@ -23,4 +23,5 @@ public class GlobalManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    
 }
