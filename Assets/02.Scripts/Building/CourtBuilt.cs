@@ -56,12 +56,16 @@ public class CourtBuilt : MonoBehaviour
     {
         RayHitting.instance.ClickObject();
         PlayStatManager.instance.Briket -= 100;
-        KingAbilityManager.instance.AdministrativePower -= 250;
-        PlayStatManager.instance.Food -= 1;
-
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+
+        KingAbilityManager.instance.AdministrativePower -= 250;
+        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+
+        PlayStatManager.instance.Food -= 1;
+        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+
         FirstCourt.SetActive(true);
         Debug.Log("1단계 법원 생성");
     }
@@ -69,12 +73,16 @@ public class CourtBuilt : MonoBehaviour
     {
         RayHitting.instance.ClickObject();
         PlayStatManager.instance.Briket -= 200;
-        KingAbilityManager.instance.AdministrativePower -= 450;
-        PlayStatManager.instance.Food -= 2;
-
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+      
+        KingAbilityManager.instance.AdministrativePower -= 450;
+        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+     
+        PlayStatManager.instance.Food -= 2;
+        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+
         FirstCourt.SetActive(false);
         SecondCourt.SetActive(true);
         Debug.Log("2단계 법원 생성");
@@ -83,12 +91,16 @@ public class CourtBuilt : MonoBehaviour
     {
         RayHitting.instance.ClickObject();
         PlayStatManager.instance.Briket -= 300;
-        KingAbilityManager.instance.AdministrativePower -= 600;
-        PlayStatManager.instance.Food -= 3;
-
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+       
+        KingAbilityManager.instance.AdministrativePower -= 600;
+        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+     
+        PlayStatManager.instance.Food -= 3;
+        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+
         SecondCourt.SetActive(false);
         ThirdCourt.SetActive(true);
         Debug.Log("3단계 법원 생성");

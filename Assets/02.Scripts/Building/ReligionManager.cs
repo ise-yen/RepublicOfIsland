@@ -11,19 +11,19 @@ public class ReligionManager : MonoBehaviour
     public Religion religionState = Religion.Catholic;
 
     //종교지지도
-    public int mainReligion;
+    int mainReligion;
     public int MainReligion { get { return mainReligion; } set { mainReligion = value; } }
 
     //천주교
-    public int catholic = 70;
+    int catholic = 70;
     public int Catholic { get { return catholic; } set { catholic = value; } }
 
     //기독교
-    public int christian = 0;
+    int christian = 0;
     public int Christian { get { return christian; } set { christian = value; } }
 
     //이슬람
-    public int islam = 30;
+    int islam = 30;
     public int Islam { get { return islam; } set { islam = value; } }
     private void Awake()
     {

@@ -9,13 +9,13 @@ public class KingAbilityManager : MonoBehaviour
     //public enum KingAbility { administrativePower = 2, economicPower = 2, warPower = 2 }
 
     //왕의 능력치: 행정력, 경제력, 군사력
-    public int administrativePower = 2;
+    int administrativePower = 2;
     public int AdministrativePower { get { return administrativePower; } set { administrativePower = value; } }
 
-    public int economicPower = 2;
+    int economicPower = 2;
     public int EconomicPower { get { return economicPower; } set { economicPower = value; } }
 
-    public int warPower = 2;
+    int warPower = 2;
     public int WarPower { get { return warPower; } set { warPower = value; } }
 
     private void Awake()
@@ -29,11 +29,6 @@ public class KingAbilityManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-    }
-
-    private void Update()
-    {
-        UIManager.instance.SetAbilityUI(administrativePower, economicPower, warPower);
     }
     /*
     public void ObtainAbility(PlayerAbility a, int add)
