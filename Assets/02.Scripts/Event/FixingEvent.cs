@@ -87,15 +87,15 @@ public class FixingEvent : MonoBehaviour
         Debug.Log("3. 범죄율 -1%, 불만도+1");
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.administrativePower, 1);
+            PlayStatManager.instance.ObtainAbility(PlayStatManager.PlayerAbility.administrativePower, 1);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.economicPower, 1);
+            PlayStatyManager.instance.ObtainAbility(PlayStatManager.PlayerAbility.economicPower, 1);
         }
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            AbilityManager.instance.ObtainAbility(AbilityManager.PlayerAbility.warMachine, 1);
+            PlayStatManager.instance.ObtainAbility(PlayStatManager.PlayerAbility.warMachine, 1);
         }
     }
     void KingGraceEvent()
