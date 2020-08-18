@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     public Text abilityText;
     #endregion
 
+    public Text dateText;
+
     public GameObject eventPagePrefab;
     public List<GameObject> eventPageList = new List<GameObject>();
 
@@ -26,6 +28,7 @@ public class UIManager : MonoBehaviour
 
     string[] example = { "왕은 똑똑해야지!", "왕도 돈이 있어야 돼!", "왕은 힘이 제일이지!" };
     string[] example2 = { "행정력 + 1", "경제력 + 1", "군사력 + 1" };
+
 
     private void Awake()
     {
@@ -43,14 +46,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         RoundManager.instance.RoundEnd += SpawnEndingUI;
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnEventManager("로이 세계에 오신 것을 진심으로 환영합니다. 여러분을 위해 준비한 작은 선물입니다.", example, example2);
-        }
+        SetDate();
     }
 
     public void SetPlayerStat(PLAYERSTAT stat, int param)
@@ -77,13 +73,23 @@ public class UIManager : MonoBehaviour
         abilityText.text = tmpString;
     }
 
+    public void SetDate()
+    {
+        string str_Date = null;
+        str_Date += RoundManager.instance.date_Y;
+        str_Date += "년 ";
+        str_Date += RoundManager.instance.date_M;
+        str_Date += "월";
+        dateText.text = str_Date;
+    }
+
 
     public void ShowEventDataList()
     {
         eventDataPanel.SetActive(true);
     }
 
-    public void SpawnEventManager(string titleParam, string[] selectParam, string[] additionalParam)
+    public void SpawnEventManager(EventType eventType)
     {
         for(int i = 0; i <eventPageList.Count; i++)
         {
@@ -96,7 +102,7 @@ public class UIManager : MonoBehaviour
         var go = Instantiate(eventPagePrefab, transform);
 
         RectTransform rt = go.GetComponent<RectTransform>();
-        go.GetComponent<EventPage>().InitPage(titleParam, selectParam, additionalParam);
+        go.GetComponent<EventPage>().InitPage(eventType);
         rt.localPosition = new Vector3(0, 0, 0) + new Vector3(30, -30) * eventPageList.Count;
         rt.localScale = Vector3.one;
         eventPageList.Add(go);
@@ -106,5 +112,6 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         endingText.enabled = false;
+        SetDate();
     }
 }
