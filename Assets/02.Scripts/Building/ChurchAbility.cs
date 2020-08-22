@@ -6,8 +6,6 @@ public class ChurchAbility : MonoBehaviour
 {
     void Update()
     {
-
-
         if (ReligionManager.instance.religionState == ReligionManager.Religion.Catholic)
         {
             if (RayHitting.instance.SelectObj.name == "CourtPlane")

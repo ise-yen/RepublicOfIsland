@@ -42,19 +42,19 @@ public class ReligionManager : MonoBehaviour
     {
         if (religionState == Religion.Catholic)
         {
-            mainReligion = Catholic;
+            MainReligion = Catholic;
         }
         else if (religionState == Religion.Christian)
         {
-            mainReligion = Christian;
+            MainReligion = Christian;
         }
         else if (religionState == Religion.Islam)
         {
-            mainReligion = Islam;
+            MainReligion = Islam;
         }
 
-        Debug.Log("초기 메인 종교: " + mainReligion);
-        return mainReligion;
+        Debug.Log("메인 종교: " + mainReligion);
+        return MainReligion;
     }
 
 
