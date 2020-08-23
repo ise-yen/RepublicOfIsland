@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayStatManager : MonoBehaviour
 {
     public static PlayStatManager instance;
+    public enum PlayState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
 
     //브리킷, 세금, 불만도, 안정도, 범죄율, 무역력, 식량
     int briket = 0;
