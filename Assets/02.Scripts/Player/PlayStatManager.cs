@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayStatManager : MonoBehaviour
 {
     public static PlayStatManager instance;
-    public enum PlayState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
 
     //브리킷, 세금, 불만도, 안정도, 범죄율, 무역력, 식량
+
     int briket = 0;
     public int Briket { get { return briket; } set { briket = value; } }
 
@@ -29,8 +29,6 @@ public class PlayStatManager : MonoBehaviour
     int food = 3;
     public int Food { get { return food; } set { food = value; } }
 
-    //public enum PlayStatState { Briket, DissatisfyRate, ComfortRate, CrimeRate, TradeRate, Food }
-
     private void Awake()
     {
         if (instance == null)
@@ -43,4 +41,5 @@ public class PlayStatManager : MonoBehaviour
             return;
         }
     }
+
 }
