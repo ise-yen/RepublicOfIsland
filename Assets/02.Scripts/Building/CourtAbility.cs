@@ -4,59 +4,41 @@ using UnityEngine;
 
 public class CourtAbility : MonoBehaviour
 {
-    int crimeRate;
-    int military;
-    //int timeCheck = 1;
-
-    void Start()
-    {
-        crimeRate = 20;
-        military = 0;
-    }
     void Update()
     {
-        //TimeCount.instance.TimeUp();
-        //if(timeCheck == TimeCount.instance.count)
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (gameObject.name == "Court1")
+            if (RayHitting.instance.SelectObj.name == "court1")
             {
                 FirstCourtAblity();
             }
-            if (gameObject.name == "Court2")
+            if (RayHitting.instance.SelectObj.name == "court2")
             {
                 SecondCourtAblity();
             }
-            if (gameObject.name == "Court3")
+            if (RayHitting.instance.SelectObj.name == "court3")
             {
                 ThirdCourtAblity();
             }
         }
-
-        //timeCheck++;
     }
 
     void FirstCourtAblity()
     {
-        crimeRate = crimeRate - 2;
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Crime, -2);
         Debug.Log("<1단계 법원 능력>");
-        Debug.Log("범죄율: " + crimeRate);
-        Debug.Log("군대: " + military);
+        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
     void SecondCourtAblity()
     {
-        crimeRate = crimeRate - 5;
-        military = military + 100;
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Crime, -5);
         Debug.Log("<2단계 법원 능력>");
-        Debug.Log("범죄율: " + crimeRate);
-        Debug.Log("군대: " + military);
+        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
     void ThirdCourtAblity()
     {
-        crimeRate = crimeRate - 10;
-        military = military + 200;
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Crime, -10);
         Debug.Log("<3단계 법원 능력>");
-        Debug.Log("범죄율: " + crimeRate);
-        Debug.Log("군대: " + military);
+        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
 }

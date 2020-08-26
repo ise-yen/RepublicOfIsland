@@ -18,23 +18,22 @@ public class CourtBuilt : MonoBehaviour
             if(RayHitting.instance.SelectObj != null)
             {
                 Debug.Log("target: " + RayHitting.instance.SelectObj.name);
-                if (RayHitting.instance.SelectObj.name == "CourtPlane")
+                if (RayHitting.instance.SelectObj.name == "courtPlane")
                 {
                     RayHitting.instance.SelectObj.SetActive(false);
                     Debug.Log("0단계 눌렀습니다.");
                     BuildFirstCourt();
                 }
-                if (RayHitting.instance.SelectObj.name == "Court1")
+                if (RayHitting.instance.SelectObj.name == "court1")
                 {
                     Debug.Log("1단계 눌렀습니다.");
                     BuildSecondCourt();
                 }
-                if (RayHitting.instance.SelectObj.name == "Court2")
+                if (RayHitting.instance.SelectObj.name == "court2")
                 {
                     Debug.Log("2단계 눌렀습니다.");
                     BuildThirdCourt();
                 }
-
             }
         }
 

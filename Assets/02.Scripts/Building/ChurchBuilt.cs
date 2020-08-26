@@ -17,18 +17,18 @@ public class ChurchBuilt : MonoBehaviour
             if (RayHitting.instance.SelectObj != null)
             {
                 Debug.Log("target: " + RayHitting.instance.SelectObj.name);
-                if (RayHitting.instance.SelectObj.name == "ChurchPlane")
+                if (RayHitting.instance.SelectObj.name == "churchPlane")
                 {
                     RayHitting.instance.SelectObj.SetActive(false);
                     Debug.Log("0단계 눌렀습니다.");
                     BuildFirstChurch();
                 }
-                if (RayHitting.instance.SelectObj.name == "Church1")
+                if (RayHitting.instance.SelectObj.name == "church1")
                 {
                     Debug.Log("1단계 눌렀습니다.");
                     BuildSecondChurch();
                 }
-                if (RayHitting.instance.SelectObj.name == "Church2")
+                if (RayHitting.instance.SelectObj.name == "church2")
                 {
                     Debug.Log("2단계 눌렀습니다.");
                     BuildThirdChurch();
