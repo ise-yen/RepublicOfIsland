@@ -58,7 +58,7 @@ public class RoundManager : MonoBehaviour
         if (eventTypes != null)
         {
             foreach(EventType eventType in eventTypes)
-            UIManager.instance.SpawnEventManager(eventType);
+                UIManager.instance.SpawnEventManager(eventType);
         }
 
         if (RoundEnd != null)

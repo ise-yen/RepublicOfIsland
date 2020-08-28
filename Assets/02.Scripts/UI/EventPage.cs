@@ -15,18 +15,17 @@ public class EventPage : MonoBehaviour
 
     public GameObject additionalBox;
 
+    EventType et;
+
     private void Awake()
     {
-        foreach (GameObject go in buttons)
-        {
-            go.GetComponent<Button>().onClick.AddListener(() => OnClickButton());
-        }
-
         additionalTexts = GetComponentsInChildren<EventPageAdditionalBox>();
     }
 
     public void InitPage(EventType eventType)
     {
+        et = null;
+        et = eventType;
         string title = eventType.title;
         string content = eventType.eventContents;
         string[] selectParam = eventType.eventSelection;
@@ -48,8 +47,19 @@ public class EventPage : MonoBehaviour
         }
     }
 
-    void OnClickButton()
+    public void OnClickButton(int idx)
     {
+        if(et.effectType.Length <= idx)
+        {
+            return;
+        }
+        //Parse Event Type
+        string effectType = et.effectType[idx];
+        string[] types = effectType.Split('_');
+        Debug.Log("TYPE: " + types[0]);
+        Debug.Log("SORT: " + types[1]);
+        Debug.Log("Num: " + types[2]);
+
         gameObject.SetActive(false);
     }
 }
