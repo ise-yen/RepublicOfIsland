@@ -4,66 +4,56 @@ using UnityEngine;
 
 public class CourtBuilt : MonoBehaviour
 {
-    //건설에 사용되는 재화 종류: 세금(브리킷) of PlayStatManager, 행정력 of KingAbilityManager, 식량 of PlayStatManager
-
+    //GameObject target;
     //건물을 담을 오브젝트
     public GameObject FirstCourt;
     public GameObject SecondCourt;
     public GameObject ThirdCourt;
 
-    //public enum CourtState { Zerocourt, Firstcourt, Secondcourt, Thirdcourt }
-
-    //CourtState courtState = CourtState.Zerocourt;
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            RayHitting.instance.ClickObject();
+            if(RayHitting.instance.SelectObj != null)
             {
-                BuildFirstCourt();
+                Debug.Log("target: " + RayHitting.instance.SelectObj.name);
+                if (RayHitting.instance.SelectObj.name == "courtPlane")
+                {
+                    RayHitting.instance.SelectObj.SetActive(false);
+                    Debug.Log("0단계 눌렀습니다.");
+                    BuildFirstCourt();
+                }
+                if (RayHitting.instance.SelectObj.name == "court1")
+                {
+                    Debug.Log("1단계 눌렀습니다.");
+                    BuildSecondCourt();
+                }
+                if (RayHitting.instance.SelectObj.name == "court2")
+                {
+                    Debug.Log("2단계 눌렀습니다.");
+                    BuildThirdCourt();
+                }
             }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
-            {
-                BuildSecondCourt();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
-            {
-                BuildThirdCourt();
-            }
         }
-    }
-    /*
-    CourtState UpgradeCourt(CourtState _court)
-    {
-        if(_court == CourtState.Zerocourt)
-        {
-            _court = CourtState.Firstcourt;
-        }
-        else if(_court == CourtState.Firstcourt)
-        {
-            _court = CourtState.Secondcourt;
-        }
-        else if (_court == CourtState.Secondcourt)
-        {
-            _court = CourtState.Thirdcourt;
-        }
-        return _court;
-    }
-    */
 
+    }
     public void BuildFirstCourt()
     {
-        RayHitting.instance.ClickObject();
-        PlayStatManager.instance.Briket -= 100;
+        //RayHitting.instance.ClickObject();
+        //RayHitting.instance.Target = RayHitting.instance.GetClickedObject();
+
+        //PlayStatManager.instance.Briket -= 100;
+        Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -100);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
-        KingAbilityManager.instance.AdministrativePower -= 250;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
+        Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
+        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -250);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
-        PlayStatManager.instance.Food -= 1;
-        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
+        Debug.Log("식량: " + PlayStatManager.instance.Food);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -1);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstCourt.SetActive(true);
@@ -71,16 +61,19 @@ public class CourtBuilt : MonoBehaviour
     }
     public void BuildSecondCourt()
     {
-        RayHitting.instance.ClickObject();
-        PlayStatManager.instance.Briket -= 200;
+        //RayHitting.instance.ClickObject();
+        //RayHitting.instance.Target = RayHitting.instance.GetClickedObject();
+
+        Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -200);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
       
-        KingAbilityManager.instance.AdministrativePower -= 450;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
+        Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
+        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -450);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
-     
-        PlayStatManager.instance.Food -= 2;
-        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
+
+        Debug.Log("식량: " + PlayStatManager.instance.Food);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -2);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstCourt.SetActive(false);
@@ -89,16 +82,19 @@ public class CourtBuilt : MonoBehaviour
     }
     public void BuildThirdCourt()
     {
-        RayHitting.instance.ClickObject();
-        PlayStatManager.instance.Briket -= 300;
+        //RayHitting.instance.ClickObject();
+        //RayHitting.instance.Target = RayHitting.instance.GetClickedObject();
+
+        Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -300);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
        
-        KingAbilityManager.instance.AdministrativePower -= 600;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
+        Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
+        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -600);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
      
-        PlayStatManager.instance.Food -= 3;
-        UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
+        Debug.Log("식량: " + PlayStatManager.instance.Food);
+        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -3);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         SecondCourt.SetActive(false);
@@ -106,3 +102,51 @@ public class CourtBuilt : MonoBehaviour
         Debug.Log("3단계 법원 생성");
     }
 }
+
+
+    //public enum CourtState { Zerocourt, Firstcourt, Secondcourt, Thirdcourt }
+    //CourtState courtState = CourtState.Zerocourt;
+    /*
+    if (Input.GetMouseButtonDown(0))
+    {
+        Debug.Log("눌렀습니다.");
+        if (RayHitting.instance.SelectObj.name == "CourtPlane")
+        {
+            Debug.Log("1단계 눌렀습니다.");
+            BuildFirstCourt();
+        }
+        else if (RayHitting.instance.SelectObj.name == "Court1")
+        {
+            Debug.Log("2단계 눌렀습니다.");
+            BuildSecondCourt();
+        }
+        else if (RayHitting.instance.SelectObj.name == "Court2")
+        {
+            Debug.Log("3단계 눌렀습니다.");
+            BuildThirdCourt();
+        }
+        else
+        {
+            Debug.Log("잘못 눌렀습니다.");
+        }
+    }
+    */
+
+/*
+CourtState UpgradeCourt(CourtState _court)
+{
+    if(_court == CourtState.Zerocourt)
+    {
+        _court = CourtState.Firstcourt;
+    }
+    else if(_court == CourtState.Firstcourt)
+    {
+        _court = CourtState.Secondcourt;
+    }
+    else if (_court == CourtState.Secondcourt)
+    {
+        _court = CourtState.Thirdcourt;
+    }
+    return _court;
+}
+*/

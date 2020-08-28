@@ -6,60 +6,61 @@ public class ChurchAbility : MonoBehaviour
 {
     void Update()
     {
-
-
-        if (ReligionManager.instance.religionState == ReligionManager.Religion.Catholic)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
+            if (ReligionManager.instance.religionState == ReligionManager.Religion.Catholic)
             {
-                FirstCatholicPassive();
-                FirstCatholicActive();
+                if (RayHitting.instance.SelectObj.name == "church1")
+                {
+                    FirstCatholicPassive();
+                    FirstCatholicActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church2")
+                {
+                    SecondCatholicPassive();
+                    SecondCatholicActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church3")
+                {
+                    ThirdCatholicPassive();
+                    ThirdCatholicActive();
+                }
             }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
+            else if (ReligionManager.instance.religionState == ReligionManager.Religion.Christian)
             {
-                SecondCatholicPassive();
-                SecondCatholicActive();
+                if (RayHitting.instance.SelectObj.name == "church1")
+                {
+                    FirstChristianPassive();
+                    FirstChristianActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church2")
+                {
+                    SecondChristianPassive();
+                    SecondChristianActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church3")
+                {
+                    ThirdChristianPassive();
+                    ThirdChristianActive();
+                }
             }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
+            else if (ReligionManager.instance.religionState == ReligionManager.Religion.Islam)
             {
-                ThirdCatholicPassive();
-                ThirdCatholicActive();
-            }
-        }
-        else if (ReligionManager.instance.religionState == ReligionManager.Religion.Christian)
-        {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
-            {
-                FirstChristianPassive();
-                FirstChristianActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
-            {
-                SecondChristianPassive();
-                SecondChristianActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
-            {
-                ThirdChristianPassive();
-                ThirdChristianActive();
-            }
-        }
-        else if (ReligionManager.instance.religionState == ReligionManager.Religion.Islam)
-        {
-            if (RayHitting.instance.SelectObj.name == "CourtPlane")
-            {
-                FirstIslamPassive();
-                FirstIslamActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court1")
-            {
-                SecondIslamPassive();
-                SecondIslamActive();
-            }
-            else if (RayHitting.instance.SelectObj.name == "Court2")
-            {
-                ThirdIslamPassive();
-                ThirdIslamActive();
+                if (RayHitting.instance.SelectObj.name == "church1")
+                {
+                    FirstIslamPassive();
+                    FirstIslamActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church2")
+                {
+                    SecondIslamPassive();
+                    SecondIslamActive();
+                }
+                else if (RayHitting.instance.SelectObj.name == "church3")
+                {
+                    ThirdIslamPassive();
+                    ThirdIslamActive();
+                }
             }
         }
     }
