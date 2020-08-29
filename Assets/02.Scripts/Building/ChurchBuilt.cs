@@ -34,7 +34,6 @@ public class ChurchBuilt : MonoBehaviour
                     BuildThirdChurch();
                 }
             }
-            Debug.Log("교회 생성 완료");
         }
     }
 
