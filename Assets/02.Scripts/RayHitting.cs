@@ -39,8 +39,6 @@ public class RayHitting : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             SelectObj = hit.collider.gameObject;
-            Debug.Log("--------------------------------");
-            Debug.Log("Object Name : " + hit.collider.gameObject.name);
         }
     }
 }

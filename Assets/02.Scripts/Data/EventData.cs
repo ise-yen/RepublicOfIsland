@@ -17,7 +17,7 @@ public class EventData
             eventSelection = new string[3] { "왕은 똑똑해야지", "왕도 돈이 있어야 돼", "왕은 힘이 제일이지" },
             eventAdditionalBox = new string[3] { "행정력 + 1", "경제력 + 1", "군사력 + 1" },
             effect = 1,
-            effectType = new string[3] { "Ability_Administrative_1", "Ability_Economy_1", "Ability_Military_1" }
+            effectType = new string[3] { "Ability_AdministrativePower_1", "Ability_EconomicPower_1", "Ability_WarPower_1" }
         });
 
         eventList.Add(new EventType
@@ -29,7 +29,7 @@ public class EventData
             eventSelection = new string[2] { "의사가 시민을 살렸습니다. 치료비를 주시죠", "시민이 죽었습니다. 애도를 표합니다" },
             eventAdditionalBox = new string[2] { "브리킷 - 3", "브리킷 - 3" },
             effect = 3,
-            effectType = new string[2] { "Money_Bricket_-3", "Money_Bricket_-3" }
+            effectType = new string[2] { "Stat_Briket_-3", "Stat_Briket_-3" }
         });
 
         eventList.Add(new EventType
@@ -41,7 +41,7 @@ public class EventData
             eventSelection = new string[3] { "올해는 돈을 많이 벌게 해주세요!", "올해는 열심히 공부해야지!", "올해는 금주 금연이다!" },
             eventAdditionalBox = new string[3] { "브리킷 + 30", "행정력 + 1", "범죄율 - 1, 불만도 + 1" },
             effect = 3,
-            effectType = new string[3] { "Money_Bricket_30", "Ability_Administrative_1", "Ability_Dissatisfy_-1" }
+            effectType = new string[3] { "Stat_Briket_30", "Ability_AdministrativePower_1", "Ability_Dissatisfy_-1" }
         });
     }
 }

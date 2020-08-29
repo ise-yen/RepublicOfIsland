@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,10 +55,23 @@ public class EventPage : MonoBehaviour
         //Parse Event Type
         string effectType = et.effectType[idx];
         string[] types = effectType.Split('_');
-        Debug.Log("TYPE: " + types[0]);
-        Debug.Log("SORT: " + types[1]);
-        Debug.Log("Num: " + types[2]);
+
+        switch(types[0])
+        {
+            case "Ability":
+                PlayerSystemManager.KingAbility ka = (PlayerSystemManager.KingAbility)Enum.Parse(typeof(PlayerSystemManager.KingAbility), types[1]);
+                PlayerSystemManager.instance.ObtainKingAbility(ka, int.Parse(types[2]));
+                break;
+            case "Stat":
+                PlayerSystemManager.PlayState ps = (PlayerSystemManager.PlayState)Enum.Parse(typeof(PlayerSystemManager.PlayState), types[1]);
+                PlayerSystemManager.instance.StatingStat(ps, int.Parse(types[2]));
+                break;
+            default:
+                Debug.Log("No Type: " + types[0]);
+                break;
+        }
 
         gameObject.SetActive(false);
     }
+    
 }

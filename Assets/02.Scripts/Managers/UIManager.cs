@@ -28,8 +28,7 @@ public class UIManager : MonoBehaviour
 
     string[] example = { "왕은 똑똑해야지!", "왕도 돈이 있어야 돼!", "왕은 힘이 제일이지!" };
     string[] example2 = { "행정력 + 1", "경제력 + 1", "군사력 + 1" };
-
-
+    
     private void Awake()
     {
         if(instance == null)
