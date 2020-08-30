@@ -16,7 +16,6 @@ public class ChurchBuilt : MonoBehaviour
             RayHitting.instance.ClickObject();
             if (RayHitting.instance.SelectObj != null)
             {
-                Debug.Log("target: " + RayHitting.instance.SelectObj.name);
                 if (RayHitting.instance.SelectObj.name == "churchPlane")
                 {
                     RayHitting.instance.SelectObj.SetActive(false);
@@ -37,26 +36,20 @@ public class ChurchBuilt : MonoBehaviour
     public void BuildFirstChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
-        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
-        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(true);
     }
     public void BuildSecondChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
-        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(false);
         SecondChurch.SetActive(true);
@@ -64,13 +57,10 @@ public class ChurchBuilt : MonoBehaviour
     public void BuildThirdChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
-        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
-        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
-        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         SecondChurch.SetActive(false);
         ThirdChurch.SetActive(true);
