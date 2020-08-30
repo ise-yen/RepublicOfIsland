@@ -17,7 +17,7 @@ public class RoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -31,20 +31,16 @@ public class RoundManager : MonoBehaviour
 
     private void Start()
     {
-        date_M = 1;
-        date_Y = 1400;
+        date_M = 12;
+        date_Y = 1399;
+
+        StartRound();
     }
 
-    void StartRound()
-    {
-        if (RoundStart != null)
-            RoundStart();
-    }
-
-    public void EndRound(string tag)
+    public void StartRound()
     {
         date_M++;
-        if(date_M >= 13)
+        if (date_M >= 13)
         {
             date_M = 1;
             date_Y++;
@@ -57,9 +53,16 @@ public class RoundManager : MonoBehaviour
 
         if (eventTypes != null)
         {
-            foreach(EventType eventType in eventTypes)
+            foreach (EventType eventType in eventTypes)
                 UIManager.instance.SpawnEventManager(eventType);
         }
+
+        UIManager.instance.RemoveInPageList(null);
+    }
+
+    public void EndRound(string tag)
+    {
+        UIManager.instance.DisableButton();
 
         if (RoundEnd != null)
             RoundEnd(tag);

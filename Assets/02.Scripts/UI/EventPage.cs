@@ -71,6 +71,7 @@ public class EventPage : MonoBehaviour
                 break;
         }
 
+        UIManager.instance.RemoveInPageList(gameObject);
         gameObject.SetActive(false);
     }
     

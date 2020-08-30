@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject eventDataPanel;
 
+    public Button endButton;
+
     string[] example = { "왕은 똑똑해야지!", "왕도 돈이 있어야 돼!", "왕은 힘이 제일이지!" };
     string[] example2 = { "행정력 + 1", "경제력 + 1", "군사력 + 1" };
     
@@ -46,6 +48,16 @@ public class UIManager : MonoBehaviour
     {
         RoundManager.instance.RoundEnd += SpawnEndingUI;
         SetDate();
+    }
+
+    public void DisableButton()
+    {
+        endButton.interactable = false;
+    }
+
+    public void EnableButton()
+    {
+        endButton.interactable = true;
     }
 
     public void SetPlayerStat(PLAYERSTAT stat, int param)
@@ -82,6 +94,21 @@ public class UIManager : MonoBehaviour
         dateText.text = str_Date;
     }
 
+    public void RemoveInPageList(GameObject go)
+    {
+        if (go != null)
+        {
+            if (eventPageList.Contains(go))
+            {
+                eventPageList.Remove(go);
+            }
+        }
+        if (eventPageList.Count == 0)
+        {
+            EnableButton();
+        }
+    }
+
 
     public void ShowEventDataList()
     {
@@ -90,13 +117,13 @@ public class UIManager : MonoBehaviour
 
     public void SpawnEventManager(EventType eventType)
     {
-        for(int i = 0; i <eventPageList.Count; i++)
-        {
-            if(!eventPageList[i].activeSelf)
-            {
-                eventPageList.RemoveAt(i);
-            }
-        }
+        //for(int i = 0; i <eventPageList.Count; i++)
+        //{
+        //    if(!eventPageList[i].activeSelf)
+        //    {
+        //        eventPageList.RemoveAt(i);
+        //    }
+        //}
 
         var go = Instantiate(eventPagePrefab, transform);
 
@@ -111,6 +138,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         endingText.enabled = false;
+        RoundManager.instance.StartRound();
         SetDate();
     }
 }
