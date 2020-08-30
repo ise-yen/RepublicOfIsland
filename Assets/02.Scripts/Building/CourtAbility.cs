@@ -26,19 +26,19 @@ public class CourtAbility : MonoBehaviour
     void FirstCourtAblity()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Crime, -2);
-        Debug.Log("<1단계 법원 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
+        //Debug.Log("<1단계 법원 능력>");
+        //Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
     void SecondCourtAblity()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Crime, -5);
-        Debug.Log("<2단계 법원 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
+        //Debug.Log("<2단계 법원 능력>");
+        //Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
     void ThirdCourtAblity()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Crime, -10);
-        Debug.Log("<3단계 법원 능력>");
-        Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
+        //Debug.Log("<3단계 법원 능력>");
+        //Debug.Log("범죄율: " + PlayStatManager.instance.CrimeRate);
     }
 }

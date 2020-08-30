@@ -20,17 +20,14 @@ public class ChurchBuilt : MonoBehaviour
                 if (RayHitting.instance.SelectObj.name == "churchPlane")
                 {
                     RayHitting.instance.SelectObj.SetActive(false);
-                    Debug.Log("0단계 눌렀습니다.");
                     BuildFirstChurch();
                 }
                 if (RayHitting.instance.SelectObj.name == "church1")
                 {
-                    Debug.Log("1단계 눌렀습니다.");
                     BuildSecondChurch();
                 }
                 if (RayHitting.instance.SelectObj.name == "church2")
                 {
-                    Debug.Log("2단계 눌렀습니다.");
                     BuildThirdChurch();
                 }
             }
@@ -40,45 +37,42 @@ public class ChurchBuilt : MonoBehaviour
     public void BuildFirstChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(true);
-        Debug.Log("1단계 교회 생성");
     }
     public void BuildSecondChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(false);
         SecondChurch.SetActive(true);
-        Debug.Log("2단계 교회 생성");
     }
     public void BuildThirdChurch()
     {
         PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
+        //Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
+        //Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
+        //Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         SecondChurch.SetActive(false);
         ThirdChurch.SetActive(true);
-        Debug.Log("3단계 교회 생성");
     }
 }
