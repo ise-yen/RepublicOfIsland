@@ -9,7 +9,6 @@ public class PlayerSystemManager : MonoBehaviour
     public enum KingAbility { AdministrativePower, EconomicPower, WarPower }
 
     //PlayStatManager: 브리킷, 세금, 불만도, 안정도, 범죄율, 무역력, 식량
-    public enum PlayState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
     private void Awake()
     {
         if (instance == null)
@@ -78,6 +77,6 @@ public class PlayerSystemManager : MonoBehaviour
             UIManager.instance.SetPlayerStat(UIManager.PLAYERSTAT.Food, PlayStatManager.instance.Food);
         }
     }
-
-
 }
+
+public enum PlayState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
