@@ -21,6 +21,9 @@ public class ButtonHandler : MonoBehaviour
             case "NewGame":
                 GlobalManager.instance.StartGame();
                 break;
+            case "LoadGame":
+                GlobalManager.instance.LoadGame();
+                break;
         }
     }
 }

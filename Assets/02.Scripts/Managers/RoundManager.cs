@@ -31,10 +31,35 @@ public class RoundManager : MonoBehaviour
 
     private void Start()
     {
-        date_M = 12;
-        date_Y = 1399;
-
+        if (GlobalManager.instance.userData != null)
+        {
+            date_M = GlobalManager.instance.userData.date_M;
+            date_Y = GlobalManager.instance.userData.date_Y;
+        }
+        else
+        {
+            date_M = 12;
+            date_Y = 1399;
+        }
         StartRound();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            DataManager.SaveData();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            UserData data = DataManager.LoadData();
+
+            date_Y = data.date_Y;
+            date_M = data.date_M;
+
+            UIManager.instance.SetDate();
+        }
     }
 
     public void StartRound()

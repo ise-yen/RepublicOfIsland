@@ -29,4 +29,11 @@ public class KingAbilityManager : MonoBehaviour
         }
     }
 
+    void InitializeGame(UserData userData)
+    {
+        if(userData != null)
+        {
+
+        }
+    }
 }

@@ -109,7 +109,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
     public void ShowEventDataList()
     {
         eventDataPanel.SetActive(true);
