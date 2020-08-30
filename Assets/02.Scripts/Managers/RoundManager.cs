@@ -37,6 +37,24 @@ public class RoundManager : MonoBehaviour
         StartRound();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            DataManager.SaveData();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            UserData data = DataManager.LoadData();
+
+            date_Y = data.date_Y;
+            date_M = data.date_M;
+
+            UIManager.instance.SetDate();
+        }
+    }
+
     public void StartRound()
     {
         date_M++;

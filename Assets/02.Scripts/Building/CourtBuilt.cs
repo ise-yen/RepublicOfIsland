@@ -17,7 +17,6 @@ public class CourtBuilt : MonoBehaviour
             RayHitting.instance.ClickObject();
             if(RayHitting.instance.SelectObj != null)
             {
-                Debug.Log("target: " + RayHitting.instance.SelectObj.name);
                 if (RayHitting.instance.SelectObj.name == "courtPlane")
                 {
                     RayHitting.instance.SelectObj.SetActive(false);
