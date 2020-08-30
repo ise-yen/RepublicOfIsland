@@ -31,9 +31,16 @@ public class RoundManager : MonoBehaviour
 
     private void Start()
     {
-        date_M = 12;
-        date_Y = 1399;
-
+        if (GlobalManager.instance.userData != null)
+        {
+            date_M = GlobalManager.instance.userData.date_M;
+            date_Y = GlobalManager.instance.userData.date_Y;
+        }
+        else
+        {
+            date_M = 12;
+            date_Y = 1399;
+        }
         StartRound();
     }
 

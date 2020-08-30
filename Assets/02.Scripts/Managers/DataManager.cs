@@ -19,7 +19,7 @@ public class DataManager : MonoBehaviour
 
     public static UserData LoadData()
     {
-        string path = Application.persistentDataPath + "/plater.dat";
+        string path = Application.persistentDataPath + "/player.dat";
         if(File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

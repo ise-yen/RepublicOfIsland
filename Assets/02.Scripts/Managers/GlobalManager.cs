@@ -5,6 +5,8 @@ public class GlobalManager : MonoBehaviour
 {
     public static GlobalManager instance;
 
+    public UserData userData = null;
+
     private void Awake()
     {
         if(instance == null)
@@ -21,6 +23,14 @@ public class GlobalManager : MonoBehaviour
 
     public void StartGame()
     {
+        SceneManager.LoadScene(1);
+        userData = null;
+    }
+
+    public void LoadGame()
+    {
+        userData = DataManager.LoadData();
+
         SceneManager.LoadScene(1);
     }
 }
