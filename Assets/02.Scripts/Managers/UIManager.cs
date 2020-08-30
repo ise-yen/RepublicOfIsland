@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     #region Stat Settings
-    public enum PLAYERSTAT { Tax, Dissatisfy, Comfort, Crime, Trade, Food }
+    public enum PLAYERSTAT { Britet,Tax, Dissatisfy, Comfort, Crime, Trade, Food }
     public Text[] statText;
     #endregion
 
@@ -60,9 +60,9 @@ public class UIManager : MonoBehaviour
         endButton.interactable = true;
     }
 
-    public void SetPlayerStat(PLAYERSTAT stat, int param)
+    public void SetPlayerStat(PlayState stat, int param)
     {
-        statText[(int)stat].text = param.ToString();
+        statText[(int)stat - 1].text = param.ToString();
     }
 
     public void SpawnEndingUI(string tag)
