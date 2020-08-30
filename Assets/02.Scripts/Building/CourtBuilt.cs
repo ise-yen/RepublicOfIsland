@@ -45,15 +45,15 @@ public class CourtBuilt : MonoBehaviour
 
         //PlayStatManager.instance.Briket -= 100;
         Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -100);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -100);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
         Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -250);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -250);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         Debug.Log("식량: " + PlayStatManager.instance.Food);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -1);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstCourt.SetActive(true);
@@ -65,15 +65,15 @@ public class CourtBuilt : MonoBehaviour
         //RayHitting.instance.Target = RayHitting.instance.GetClickedObject();
 
         Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -200);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -200);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
       
         Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -450);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -450);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
         Debug.Log("식량: " + PlayStatManager.instance.Food);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -2);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -2);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstCourt.SetActive(false);
@@ -86,15 +86,15 @@ public class CourtBuilt : MonoBehaviour
         //RayHitting.instance.Target = RayHitting.instance.GetClickedObject();
 
         Debug.Log("브리킷: "+ PlayStatManager.instance.Briket);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -300);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -300);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
        
         Debug.Log("행정력: " + KingAbilityManager.instance.AdministrativePower);
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -600);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
      
         Debug.Log("식량: " + PlayStatManager.instance.Food);
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -3);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         SecondCourt.SetActive(false);

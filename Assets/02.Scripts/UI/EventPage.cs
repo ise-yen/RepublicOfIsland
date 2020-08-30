@@ -59,11 +59,11 @@ public class EventPage : MonoBehaviour
         switch(types[0])
         {
             case "Ability":
-                PlayerSystemManager.KingAbility ka = (PlayerSystemManager.KingAbility)Enum.Parse(typeof(PlayerSystemManager.KingAbility), types[1]);
+                KingAbility ka = (KingAbility)Enum.Parse(typeof(KingAbility), types[1]);
                 PlayerSystemManager.instance.ObtainKingAbility(ka, int.Parse(types[2]));
                 break;
             case "Stat":
-                PlayerSystemManager.PlayState ps = (PlayerSystemManager.PlayState)Enum.Parse(typeof(PlayerSystemManager.PlayState), types[1]);
+                PlayState ps = (PlayState)Enum.Parse(typeof(PlayState), types[1]);
                 PlayerSystemManager.instance.StatingStat(ps, int.Parse(types[2]));
                 break;
             default:

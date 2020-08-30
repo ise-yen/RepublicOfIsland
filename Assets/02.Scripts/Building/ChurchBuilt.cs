@@ -39,13 +39,13 @@ public class ChurchBuilt : MonoBehaviour
 
     public void BuildFirstChurch()
     {
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -125);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -400);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -1);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(true);
@@ -53,13 +53,13 @@ public class ChurchBuilt : MonoBehaviour
     }
     public void BuildSecondChurch()
     {
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -250);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -600);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -3);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         FirstChurch.SetActive(false);
@@ -68,13 +68,13 @@ public class ChurchBuilt : MonoBehaviour
     }
     public void BuildThirdChurch()
     {
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Briket, -500);
+        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
         Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
 
-        PlayerSystemManager.instance.ObtainKingAbility(PlayerSystemManager.KingAbility.AdministrativePower, -800);
+        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
         Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
 
-        PlayerSystemManager.instance.StatingStat(PlayerSystemManager.PlayState.Food, -5);
+        PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
         Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
 
         SecondChurch.SetActive(false);

@@ -6,7 +6,6 @@ public class PlayerSystemManager : MonoBehaviour
 {
     public static PlayerSystemManager instance;
     //KingAbilityManager: 행정력, 경제력, 군사력
-    public enum KingAbility { AdministrativePower, EconomicPower, WarPower }
 
     //PlayStatManager: 브리킷, 세금, 불만도, 안정도, 범죄율, 무역력, 식량
     private void Awake()
@@ -23,7 +22,7 @@ public class PlayerSystemManager : MonoBehaviour
     }
     public void ObtainKingAbility(KingAbility kingAbility, int add)
     {
-        if(kingAbility == KingAbility.AdministrativePower)
+        if (kingAbility == KingAbility.AdministrativePower)
         {
             KingAbilityManager.instance.AdministrativePower += add;
             UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
@@ -79,4 +78,5 @@ public class PlayerSystemManager : MonoBehaviour
     }
 }
 
+public enum KingAbility { AdministrativePower, EconomicPower, WarPower }
 public enum PlayState { Briket, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
