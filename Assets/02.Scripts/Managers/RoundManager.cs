@@ -71,7 +71,7 @@ public class RoundManager : MonoBehaviour
             date_Y++;
         }
 
-        var eventTypes = from eventType in eventData.eventList
+        var eventTypes = from eventType in EventData.eventList
                          where eventType.date_M == date_M
                          where eventType.date_Y == date_Y
                          select eventType;
