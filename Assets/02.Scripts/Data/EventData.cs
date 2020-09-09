@@ -5,7 +5,6 @@ using System;
 public class EventData
 {
     public static List<EventType> eventList = new List<EventType>();
-
 }
 
 [Serializable]

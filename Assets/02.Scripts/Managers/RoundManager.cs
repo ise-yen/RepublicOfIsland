@@ -41,6 +41,7 @@ public class RoundManager : MonoBehaviour
             date_M = 12;
             date_Y = 1399;
         }
+        AudioManager.instance.PlayBGMAudio("BGM_BGM");
         StartRound();
     }
 
@@ -79,7 +80,7 @@ public class RoundManager : MonoBehaviour
         if (eventTypes != null)
         {
             foreach (EventType eventType in eventTypes)
-                UIManager.instance.SpawnEventManager(eventType);
+                UIManager.instance.SpawnEventPage(eventType);
         }
 
         UIManager.instance.RemoveInPageList(null);

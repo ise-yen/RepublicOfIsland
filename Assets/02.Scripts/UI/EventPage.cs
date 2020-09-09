@@ -21,6 +21,24 @@ public class EventPage : MonoBehaviour
         additionalTexts = GetComponentsInChildren<EventPageAdditionalBox>();
     }
 
+    public void InitPage(Building build, int level)
+    {
+        string title = "Church";
+        string content = "교회를 진화시키겠습니까?";
+        string[] selectParam = new string[2] { "예", "아니오" };
+        string[] additionParam = new string[2] { "Briket - 20", "Briket - 40" };
+        if(build == Building.Church)
+        {
+
+        }
+        else if(build == Building.Court)
+        {
+
+        }
+        titleText.text = title;
+        contentsText.text = content;
+    }
+
     public void InitPage(EventType eventType)
     {
         et = null;
@@ -66,6 +84,8 @@ public class EventPage : MonoBehaviour
                 PlayState ps = (PlayState)Enum.Parse(typeof(PlayState), types[1]);
                 PlayerSystemManager.instance.StatingStat(ps, int.Parse(types[2]));
                 break;
+            case "Building":
+                break;
             default:
                 Debug.Log("No Type: " + types[0]);
                 break;
@@ -74,5 +94,9 @@ public class EventPage : MonoBehaviour
         UIManager.instance.RemoveInPageList(gameObject);
         gameObject.SetActive(false);
     }
-    
+
+    void UpgradeBuilding()
+    {
+
+    }
 }

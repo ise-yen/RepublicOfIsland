@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void PlayEffectAudio(string tag)
+    public void PlayEffectAudio(string tag)
     {
         int i;
 
@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void PlayBGMAudio(string tag)
+    public void PlayBGMAudio(string tag)
     {
         int i;
 
@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void StopBGMAudio(string tag)
+    public void StopBGMAudio(string tag)
     {
         int i;
 
@@ -88,7 +88,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void StopAllBGMAudio()
+    public void StopAllBGMAudio()
     {
         foreach(AudioSource audio in bgmList)
         {
@@ -96,7 +96,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void StopAllEffectAudio()
+    public void StopAllEffectAudio()
     {
         foreach (AudioSource audio in effectList)
         {

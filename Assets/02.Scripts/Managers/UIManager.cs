@@ -114,7 +114,18 @@ public class UIManager : MonoBehaviour
         eventDataPanel.SetActive(true);
     }
 
-    public void SpawnEventManager(EventType eventType)
+    public void SpawnBuildingPage(Building building, int level)
+    {
+        var go = Instantiate(eventPagePrefab, transform);
+        go.GetComponent<EventPage>().InitPage(building, level);
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.localPosition = new Vector3(0, 0, 0) + new Vector3(30, -30) * eventPageList.Count;
+        rt.localScale = Vector3.one;
+        eventPageList.Add(go);
+    }
+
+    public void SpawnEventPage(EventType eventType)
     {
         //for(int i = 0; i <eventPageList.Count; i++)
         //{
@@ -141,3 +152,5 @@ public class UIManager : MonoBehaviour
         SetDate();
     }
 }
+
+public enum Building { Church, Court }
