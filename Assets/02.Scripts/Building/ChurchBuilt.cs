@@ -4,65 +4,58 @@ using UnityEngine;
 
 public class ChurchBuilt : MonoBehaviour
 {
-    //건물을 담을 오브젝트
-    public GameObject FirstChurch;
-    public GameObject SecondChurch;
-    public GameObject ThirdChurch;
-
-    void Update()
+    public static ChurchBuilt instance;
+    public enum ChurchStage { zero, one, two, three }
+    public ChurchStage buildingChurchStage = ChurchStage.zero;
+    public GameObject[] churchMesh;
+    int lastStage = (int)ChurchStage.three;
+    private void Awake()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (instance == null)
         {
-            RayHitting.instance.ClickObject();
-            if (RayHitting.instance.SelectObj != null)
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
+    public void UpgradeChurch()
+    {
+        RayHitting.instance.ClickObject();
+        if (RayHitting.instance.SelectObj != null)
+        {
+            // if (RayHitting.instance.SelectObj.name == "churchPlane")
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.zero])
             {
-                if (RayHitting.instance.SelectObj.name == "churchPlane")
-                {
-                    RayHitting.instance.SelectObj.SetActive(false);
-                    BuildFirstChurch();
-                }
-                if (RayHitting.instance.SelectObj.name == "church1")
-                {
-                    BuildSecondChurch();
-                }
-                if (RayHitting.instance.SelectObj.name == "church2")
-                {
-                    BuildThirdChurch();
-                }
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
+                BuildNextChurch();
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.one])
+            {
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
+                BuildNextChurch();
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.two])
+            {
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
+                BuildNextChurch();
             }
         }
     }
 
-    public void BuildFirstChurch()
+    public void BuildNextChurch()
     {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-
-        FirstChurch.SetActive(true);
-    }
-    public void BuildSecondChurch()
-    {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-
-        FirstChurch.SetActive(false);
-        SecondChurch.SetActive(true);
-    }
-    public void BuildThirdChurch()
-    {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
-
-        SecondChurch.SetActive(false);
-        ThirdChurch.SetActive(true);
+        churchMesh[(int)buildingChurchStage].SetActive(false);
+        buildingChurchStage = buildingChurchStage + 1;
+        churchMesh[(int)buildingChurchStage].SetActive(true);
     }
 }

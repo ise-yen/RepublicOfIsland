@@ -70,20 +70,17 @@ public class ChurchAbility : MonoBehaviour
     {
         //지속효과1
         PlayStatManager.instance.Tax += 1;
-        UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
     }
     void SecondCatholicPassive()
     {
         //지속효과1
         PlayStatManager.instance.Tax += 3;
-        UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
     }
 
     void ThirdCatholicPassive()
     {
         //지속효과1
         PlayStatManager.instance.Tax += 5;
-        UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
     }
 
     //액티브효과
@@ -94,19 +91,16 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
 
         KingAbilityManager.instance.AdministrativePower -= 200;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
         PlayStatManager.instance.Briket += 50;
 
         KingAbilityManager.instance.AdministrativePower -= 100;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과3
         ReligionManager.instance.MainReligion += 1;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void SecondCatholicActive()
     {
@@ -115,19 +109,16 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
 
         KingAbilityManager.instance.AdministrativePower -= 150;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
         PlayStatManager.instance.Briket += 75;
 
         KingAbilityManager.instance.AdministrativePower -= 100;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과3
         ReligionManager.instance.MainReligion += 2;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void ThirdCatholicActive()
     {
@@ -136,19 +127,16 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
 
         KingAbilityManager.instance.AdministrativePower -= 100;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
         PlayStatManager.instance.Briket += 100;
 
         KingAbilityManager.instance.AdministrativePower -= 100;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과3
         ReligionManager.instance.MainReligion += 3;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
 
 
@@ -190,7 +178,6 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 1;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void SecondChristianActive()
     {
@@ -201,7 +188,6 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 2;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void ThirdChristianActive()
     {
@@ -212,7 +198,6 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 3;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
 
     //이슬람 효과
@@ -220,20 +205,17 @@ public class ChurchAbility : MonoBehaviour
     {
         //지속효과1
         PlayStatManager.instance.Food += 3;
-        UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
     }
     void SecondIslamPassive()
     {
         //지속효과1
         PlayStatManager.instance.Food += 5;
-        UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
     }
 
     void ThirdIslamPassive()
     {
         //지속효과1
         PlayStatManager.instance.Food += 7;
-        UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
     }
 
     //액티브효과
@@ -244,7 +226,6 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
 
         KingAbilityManager.instance.AdministrativePower -= 150;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
 
@@ -252,7 +233,6 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 1;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void SecondIslamActive()
     {
@@ -261,7 +241,6 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
 
         KingAbilityManager.instance.AdministrativePower -= 150;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
 
@@ -269,7 +248,6 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 2;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
     void ThirdIslamActive()
     {
@@ -278,7 +256,6 @@ public class ChurchAbility : MonoBehaviour
         UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
 
         KingAbilityManager.instance.AdministrativePower -= 150;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
         //액티브효과2
 
@@ -286,6 +263,5 @@ public class ChurchAbility : MonoBehaviour
         ReligionManager.instance.MainReligion += 3;
 
         KingAbilityManager.instance.AdministrativePower -= 50;
-        UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
     }
 }
