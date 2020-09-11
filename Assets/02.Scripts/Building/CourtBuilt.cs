@@ -8,6 +8,7 @@ public class CourtBuilt : MonoBehaviour
     public enum CourtStage { zero, one, two, three }
     public CourtStage buildingCourtStage = CourtStage.zero;
     public GameObject[] courtMesh;
+
     private void Awake()
     {
         if (instance == null)
@@ -21,6 +22,10 @@ public class CourtBuilt : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        ChurchBuilt.instance.UpgradeChurch();
+    }
     public void UpgradeCourt()
     {
         RayHitting.instance.ClickObject();

@@ -8,7 +8,7 @@ public class ChurchBuilt : MonoBehaviour
     public enum ChurchStage { zero, one, two, three }
     public ChurchStage buildingChurchStage = ChurchStage.zero;
     public GameObject[] churchMesh;
-    int lastStage = (int)ChurchStage.three;
+
     private void Awake()
     {
         if (instance == null)
