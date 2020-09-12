@@ -24,6 +24,12 @@ public class CourtBuilt : MonoBehaviour
 
     public void UpgradeCourt()
     {
+        UsingStatForCourt();
+        BuildNextCourt();
+    }
+
+    public void UsingStatForCourt()
+    {
         /*     
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj != null)

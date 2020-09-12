@@ -21,8 +21,13 @@ public class ChurchBuilt : MonoBehaviour
             return;
         }
     }
-
     public void UpgradeChurch()
+    {
+        UsingStatForChurch();
+        BuildNextChurch();
+    }
+
+    public void UsingStatForChurch()
     {
         /*
         RayHitting.instance.ClickObject();
