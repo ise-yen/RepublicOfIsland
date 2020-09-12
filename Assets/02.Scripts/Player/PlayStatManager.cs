@@ -12,22 +12,33 @@ public class PlayStatManager : MonoBehaviour
     public int Briket { get { return briket; } set { briket = value; } }
 
     int tax = 0;
-    public int Tax { get { return tax; } set { tax = value; } }
+    public int Tax { get { return tax; } set { tax = value; 
+            UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.tax); ;
+        } }
 
     int dissatisfyRate = 2;
-    public int DissatisfyRate { get { return dissatisfyRate; } set { dissatisfyRate = value; } }
+    public int DissatisfyRate { get { return dissatisfyRate; } set { dissatisfyRate = value;
+            UIManager.instance.SetPlayerStat(PlayState.Dissatisfy, PlayStatManager.instance.dissatisfyRate); } }
 
     int comfortRate = 0;
-    public int ComfortRate { get { return comfortRate; } set { comfortRate = value; } }
+    public int ComfortRate { get { return comfortRate; } set { comfortRate = value;
+            UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.comfortRate);
+        } }
     
     int crimeRate = 2;
-    public int CrimeRate { get { return crimeRate; } set { crimeRate = value; } }
+    public int CrimeRate { get { return crimeRate; } set { crimeRate = value;
+            UIManager.instance.SetPlayerStat(PlayState.Crime, PlayStatManager.instance.crimeRate);
+        } }
     
     int tradeRate = 1;
-    public int TradeRate { get { return tradeRate; } set { tradeRate = value; } }
+    public int TradeRate { get { return tradeRate; } set { tradeRate = value;
+            UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.tradeRate);
+        } }
 
     int food = 3;
-    public int Food { get { return food; } set { food = value; } }
+    public int Food { get { return food; } set { food = value;
+            UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.food);
+        } }
 
     private void Awake()
     {

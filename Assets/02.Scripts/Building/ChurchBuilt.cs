@@ -4,81 +4,58 @@ using UnityEngine;
 
 public class ChurchBuilt : MonoBehaviour
 {
-    //건물을 담을 오브젝트
-    public GameObject FirstChurch;
-    public GameObject SecondChurch;
-    public GameObject ThirdChurch;
+    public static ChurchBuilt instance;
+    public enum ChurchStage { zero, one, two, three }
+    public ChurchStage buildingChurchStage = ChurchStage.zero;
+    public GameObject[] churchMesh;
 
-    void Update()
+    private void Awake()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (instance == null)
         {
-            RayHitting.instance.ClickObject();
-            if (RayHitting.instance.SelectObj != null)
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
+    public void UpgradeChurch()
+    {
+        RayHitting.instance.ClickObject();
+        if (RayHitting.instance.SelectObj != null)
+        {
+            // if (RayHitting.instance.SelectObj.name == "churchPlane")
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.zero])
             {
-                Debug.Log("target: " + RayHitting.instance.SelectObj.name);
-                if (RayHitting.instance.SelectObj.name == "churchPlane")
-                {
-                    RayHitting.instance.SelectObj.SetActive(false);
-                    Debug.Log("0단계 눌렀습니다.");
-                    BuildFirstChurch();
-                }
-                if (RayHitting.instance.SelectObj.name == "church1")
-                {
-                    Debug.Log("1단계 눌렀습니다.");
-                    BuildSecondChurch();
-                }
-                if (RayHitting.instance.SelectObj.name == "church2")
-                {
-                    Debug.Log("2단계 눌렀습니다.");
-                    BuildThirdChurch();
-                }
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
+                BuildNextChurch();
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.one])
+            {
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
+                BuildNextChurch();
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.two])
+            {
+                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
+                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
+                PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
+                BuildNextChurch();
             }
         }
     }
 
-    public void BuildFirstChurch()
+    public void BuildNextChurch()
     {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
-
-        FirstChurch.SetActive(true);
-        Debug.Log("1단계 교회 생성");
-    }
-    public void BuildSecondChurch()
-    {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
-
-        FirstChurch.SetActive(false);
-        SecondChurch.SetActive(true);
-        Debug.Log("2단계 교회 생성");
-    }
-    public void BuildThirdChurch()
-    {
-        PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
-        Debug.Log("잔여 브리킷: " + PlayStatManager.instance.Briket);
-
-        PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
-        Debug.Log("잔여 행정력: " + KingAbilityManager.instance.AdministrativePower);
-
-        PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
-        Debug.Log("잔여 식량: " + PlayStatManager.instance.Food);
-
-        SecondChurch.SetActive(false);
-        ThirdChurch.SetActive(true);
-        Debug.Log("3단계 교회 생성");
+        churchMesh[(int)buildingChurchStage].SetActive(false);
+        buildingChurchStage = buildingChurchStage + 1;
+        churchMesh[(int)buildingChurchStage].SetActive(true);
     }
 }
