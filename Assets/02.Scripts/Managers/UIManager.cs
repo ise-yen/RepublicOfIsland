@@ -140,7 +140,6 @@ public class UIManager : MonoBehaviour
         //        eventPageList.RemoveAt(i);
         //    }
         //}
-
         var go = Instantiate(eventPagePrefab, transform);
 
         RectTransform rt = go.GetComponent<RectTransform>();

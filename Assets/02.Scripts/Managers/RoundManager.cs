@@ -76,7 +76,7 @@ public class RoundManager : MonoBehaviour
                          where eventType.date_M == date_M
                          where eventType.date_Y == date_Y
                          select eventType;
-
+        
         if (eventTypes != null)
         {
             foreach (EventType eventType in eventTypes)

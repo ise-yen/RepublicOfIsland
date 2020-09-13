@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
 
 public class CSVReader : MonoBehaviour
@@ -50,9 +48,10 @@ public class CSVReader : MonoBehaviour
 
         string[] additionalBox = parsed_str[6].Split('\'');
         string[] effectStat = parsed_str[7].Split('\'');
-
+        Debug.Log(date_Y);
         EventData.eventList.Add(new EventType
-        {
+        { 
+            
             date_Y = date_Y,
             date_M = date_M,
             title = title,
@@ -61,5 +60,9 @@ public class CSVReader : MonoBehaviour
             eventAdditionalBox = additionalBox,
             effectType = effectStat
         });
+    }
+
+    void IntializeUserStat(UserData userData)
+    {
     }
 }
