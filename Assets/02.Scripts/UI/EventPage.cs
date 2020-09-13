@@ -14,6 +14,8 @@ public class EventPage : MonoBehaviour
 
     public GameObject additionalBox;
 
+    bool _isBuilding = false;
+
     EventType et;
 
     private void Awake()
@@ -23,20 +25,42 @@ public class EventPage : MonoBehaviour
 
     public void InitPage(Building build, int level)
     {
-        string title = "Church";
-        string content = "교회를 진화시키겠습니까?";
+        _isBuilding = true;
+        string title = null;
+        string content = null;
         string[] selectParam = new string[2] { "예", "아니오" };
-        string[] additionParam = new string[2] { "Briket - 20", "Briket - 40" };
+        string[] additionalParam = new string[2] { "Briket - 20", "Briket - 40" };
         if(build == Building.Church)
         {
-
+            title += "교회를 ";
+            content += "교회를 ";
         }
         else if(build == Building.Court)
         {
-
+            title += "법원을 ";
+            content += "법원을 ";
         }
+
+        title += "진화시키겠습니까?";
+        content += "진화시키겠습니까?";
+
+        for (int i = 0; i < 3; i++)
+        {
+            selectTexts[i].text = null;
+            additionalTexts[i].str_Instruction = null;
+        }
+
+        Initialize(selectParam.Length);
+        for (int i = 0; i < selectParam.Length; i++)
+        {
+            selectTexts[i].text = selectParam[i];
+            additionalTexts[i].str_Instruction = additionalParam[i];
+        }
+
         titleText.text = title;
         contentsText.text = content;
+
+        _isBuilding = true;
     }
 
     public void InitPage(EventType eventType)
@@ -63,9 +87,34 @@ public class EventPage : MonoBehaviour
             additionalTexts[i].str_Instruction = additionalParam[i];
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ChurchBuilt.instance.UpgradeChurch();
+        }
+
+    }
 
     public void OnClickButton(int idx)
     {
+        if(idx == 0 && _isBuilding)
+        {
+            ChurchBuilt.instance.UpgradeChurch();
+            gameObject.SetActive(false);
+            return;
+        }
+        else if(idx == 1 && _isBuilding)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        else if(_isBuilding)
+        {
+            return;
+        }
+        
+
         if(et.effectType.Length <= idx)
         {
             return;
@@ -95,8 +144,27 @@ public class EventPage : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    void RandomStat(string type, string num)
+    {
+        string[] nums = num.Split('\'');
+       // int[] 
+
+        switch (type)
+        {
+            case "Ability":
+                break;
+            case "Briket":
+                break;
+            case "Food":
+                break;
+            case "Army":
+                break;
+        }
+    }
+
     void UpgradeBuilding()
     {
-
+        ChurchBuilt.instance.UpgradeChurch();
+        gameObject.SetActive(false);
     }
 }

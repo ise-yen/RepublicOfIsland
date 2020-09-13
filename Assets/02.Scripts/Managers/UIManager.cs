@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     #region Stat Settings
-    public enum PLAYERSTAT { Britet,Tax, Dissatisfy, Comfort, Crime, Trade, Food }
+    public enum PLAYERSTAT { Britet, Tax, Dissatisfy, Comfort, Crime, Trade, Food }
     public Text[] statText;
     #endregion
 
@@ -30,14 +30,14 @@ public class UIManager : MonoBehaviour
 
     string[] example = { "왕은 똑똑해야지!", "왕도 돈이 있어야 돼!", "왕은 힘이 제일이지!" };
     string[] example2 = { "행정력 + 1", "경제력 + 1", "군사력 + 1" };
-    
+
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-        else if(instance != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
             return;
@@ -48,6 +48,12 @@ public class UIManager : MonoBehaviour
     {
         RoundManager.instance.RoundEnd += SpawnEndingUI;
         SetDate();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+            SpawnBuildingPage(Building.Church, 0);
     }
 
     public void DisableButton()
