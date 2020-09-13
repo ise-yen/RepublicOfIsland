@@ -21,6 +21,26 @@ public class ChurchBuilt : MonoBehaviour
             return;
         }
     }
+    public void LoadCourtUI()
+    {
+        RayHitting.instance.ClickObject();
+        if (RayHitting.instance.SelectObj != null)
+        {
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.zero])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.zero);
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.one])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.one);
+            }
+            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.two])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.two);
+            }
+        }
+    }
+
     public void UpgradeChurch()
     {
         UsingStatForChurch();

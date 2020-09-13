@@ -51,7 +51,6 @@ public class RayHitting : MonoBehaviour
             SelectObj = hit.collider.gameObject;
         }
     }
-
     private void HandleLookAtRay()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);

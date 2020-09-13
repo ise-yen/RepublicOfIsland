@@ -53,6 +53,7 @@ public class ReligionManager : MonoBehaviour
             MainReligion = Islam;
         }
 
+        Debug.Log("메인 종교: " + mainReligion);
         return MainReligion;
     }
 

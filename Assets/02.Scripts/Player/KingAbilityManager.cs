@@ -8,19 +8,13 @@ public class KingAbilityManager : MonoBehaviour
 
     //왕의 능력치: 행정력, 경제력, 군사력
     int administrativePower = 2;
-    public int AdministrativePower { get { return administrativePower; } set { administrativePower = value;
-            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
-        } }
+    public int AdministrativePower { get { return administrativePower; } set { administrativePower = value; } }
 
     int economicPower = 2;
-    public int EconomicPower { get { return economicPower; } set { economicPower = value;
-            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
-        } }
+    public int EconomicPower { get { return economicPower; } set { economicPower = value; } }
 
     int warPower = 2;
-    public int WarPower { get { return warPower; } set { warPower = value;
-            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
-        } }
+    public int WarPower { get { return warPower; } set { warPower = value; } }
 
     private void Awake()
     {

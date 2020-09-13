@@ -6,8 +6,12 @@ public class TestingBuilt : MonoBehaviour
 {
     void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
             ChurchBuilt.instance.UpgradeChurch();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad1)){
             CourtBuilt.instance.UpgradeCourt();
         }
     }

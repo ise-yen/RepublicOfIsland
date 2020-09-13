@@ -23,20 +23,6 @@ public class EventPage : MonoBehaviour
         additionalTexts = GetComponentsInChildren<EventPageAdditionalBox>();
     }
 
-    private void Initialize(int idx)
-    {
-        foreach(GameObject button in buttons)
-        {
-            button.GetComponent<Button>().enabled = false;
-        }
-
-        for(int i = 0; i < idx; i++)
-        {
-            buttons[i].GetComponent<Button>().enabled = true;
-        }
-    }
-
-
     public void InitPage(Building build, int level)
     {
         _isBuilding = true;
@@ -95,7 +81,6 @@ public class EventPage : MonoBehaviour
             additionalTexts[i].str_Instruction = null;
         }
 
-        Initialize(selectParam.Length);
         for (int i = 0; i < selectParam.Length; i++)
         {
             selectTexts[i].text = selectParam[i];
@@ -148,16 +133,7 @@ public class EventPage : MonoBehaviour
                 PlayState ps = (PlayState)Enum.Parse(typeof(PlayState), types[1]);
                 PlayerSystemManager.instance.StatingStat(ps, int.Parse(types[2]));
                 break;
-            case "Religion":
-                RELIGION rel = (RELIGION)Enum.Parse(typeof(RELIGION), types[1]);
-                //Adjust Religion Stat
-                break;
-            case "Random":
-                RandomStat(types[1], types[2]);
-                break;
-            case "Military":
-                break;
-            case "Trade":
+            case "Building":
                 break;
             default:
                 Debug.Log("No Type: " + types[0]);
@@ -192,5 +168,3 @@ public class EventPage : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
-public enum RELIGION { Catholic, Islam, Christ }
