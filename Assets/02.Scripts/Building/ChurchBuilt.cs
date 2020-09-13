@@ -21,41 +21,47 @@ public class ChurchBuilt : MonoBehaviour
             return;
         }
     }
-
     public void UpgradeChurch()
     {
+        UsingStatForChurch();
+        BuildNextChurch();
+    }
+
+    public void UsingStatForChurch()
+    {
+        /*
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj != null)
         {
-            // if (RayHitting.instance.SelectObj.name == "churchPlane")
             if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.zero])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-                BuildNextChurch();
-            }
-            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.one])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-                BuildNextChurch();
-            }
-            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.two])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
-                BuildNextChurch();
-            }
+         */
+        if (buildingChurchStage == ChurchStage.zero)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -125);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -400);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
+        }
+        if (buildingChurchStage == ChurchStage.one)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -250);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
+        }
+        if (buildingChurchStage == ChurchStage.two)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -500);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -800);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -5);
         }
     }
 
     public void BuildNextChurch()
     {
-        churchMesh[(int)buildingChurchStage].SetActive(false);
-        buildingChurchStage = buildingChurchStage + 1;
-        churchMesh[(int)buildingChurchStage].SetActive(true);
+        if((int)buildingChurchStage < 3)
+        {
+            churchMesh[(int)buildingChurchStage].SetActive(false);
+            buildingChurchStage = buildingChurchStage + 1;
+            churchMesh[(int)buildingChurchStage].SetActive(true);
+        }
     }
 }

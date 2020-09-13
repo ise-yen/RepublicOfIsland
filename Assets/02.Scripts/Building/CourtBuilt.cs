@@ -22,44 +22,47 @@ public class CourtBuilt : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        ChurchBuilt.instance.UpgradeChurch();
-    }
     public void UpgradeCourt()
     {
+        UsingStatForCourt();
+        BuildNextCourt();
+    }
+
+    public void UsingStatForCourt()
+    {
+        /*     
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj != null)
         {
-            // if (RayHitting.instance.SelectObj.name == "courtPlane")
             if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.zero])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -100);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -250);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
-                BuildNextCourt();
+         */
+        if (buildingCourtStage == CourtStage.zero)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -100);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -250);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -1);
+        }
+        if (buildingCourtStage == CourtStage.one)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -200);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -450);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -2);
             }
-            if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.one])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -200);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -450);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -2);
-                BuildNextCourt();
-            }
-            if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.two])
-            {
-                PlayerSystemManager.instance.StatingStat(PlayState.Briket, -300);
-                PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
-                PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
-                BuildNextCourt();
-            }
+        if (buildingCourtStage == CourtStage.two)
+        {
+            PlayerSystemManager.instance.StatingStat(PlayState.Briket, -300);
+            PlayerSystemManager.instance.ObtainKingAbility(KingAbility.AdministrativePower, -600);
+            PlayerSystemManager.instance.StatingStat(PlayState.Food, -3);
         }
     }
 
     public void BuildNextCourt()
     {
-        courtMesh[(int)buildingCourtStage].SetActive(false);
-        buildingCourtStage = buildingCourtStage + 1;
-        courtMesh[(int)buildingCourtStage].SetActive(true);
+        if ((int)buildingCourtStage < 3)
+        {
+            courtMesh[(int)buildingCourtStage].SetActive(false);
+            buildingCourtStage = buildingCourtStage + 1;
+            courtMesh[(int)buildingCourtStage].SetActive(true);
+        }
     }
 }
