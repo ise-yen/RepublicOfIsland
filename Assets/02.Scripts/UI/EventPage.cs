@@ -116,6 +116,7 @@ public class EventPage : MonoBehaviour
         if(idx == 0 && _isBuilding)
         {
             ChurchBuilt.instance.UpgradeChurch();
+            gameObject.SetActive(false);
             return;
         }
         else if(idx == 1 && _isBuilding)
@@ -127,7 +128,6 @@ public class EventPage : MonoBehaviour
         {
             return;
         }
-
         
 
         if(et.effectType.Length <= idx)
