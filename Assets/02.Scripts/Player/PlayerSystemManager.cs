@@ -25,14 +25,17 @@ public class PlayerSystemManager : MonoBehaviour
         if (kingAbility == KingAbility.AdministrativePower)
         {
             KingAbilityManager.instance.AdministrativePower += add;
+            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         }
         else if (kingAbility == KingAbility.EconomicPower)
         {
             KingAbilityManager.instance.EconomicPower += add;
+            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         }
         else if (kingAbility == KingAbility.WarPower)
         {
             KingAbilityManager.instance.WarPower += add;
+            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
         }
     }
 
@@ -45,26 +48,32 @@ public class PlayerSystemManager : MonoBehaviour
         else if (playState == PlayState.Tax)
         {
             PlayStatManager.instance.Tax += add;
+            UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
         }
         else if (playState == PlayState.Dissatisfy)
         {
             PlayStatManager.instance.DissatisfyRate += add;
+            UIManager.instance.SetPlayerStat(PlayState.Dissatisfy, PlayStatManager.instance.DissatisfyRate);
         }
         else if (playState == PlayState.Comfort)
         {
             PlayStatManager.instance.ComfortRate += add;
+            UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
         }
         else if (playState == PlayState.Crime)
         {
             PlayStatManager.instance.CrimeRate += add;
+            UIManager.instance.SetPlayerStat(PlayState.Crime, PlayStatManager.instance.CrimeRate);
         }
         else if (playState == PlayState.Trade)
         {
             PlayStatManager.instance.TradeRate += add;
+            UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
         }
         else if (playState == PlayState.Food)
         {
             PlayStatManager.instance.Food += add;
+            UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
         }
     }
 }

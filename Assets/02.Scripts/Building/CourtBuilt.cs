@@ -28,6 +28,26 @@ public class CourtBuilt : MonoBehaviour
         BuildNextCourt();
     }
 
+    public void CheckBuilding()
+    {
+        RayHitting.instance.ClickObject();
+        if (RayHitting.instance.SelectObj != null)
+        {
+            if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.zero])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.zero);
+            }
+            if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.one])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.one);
+            }
+            if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.two])
+            {
+                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.two);
+            }
+        }
+
+    }
     public void UsingStatForCourt()
     {
         /*     
