@@ -20,6 +20,41 @@ public class PlayerSystemManager : MonoBehaviour
             return;
         }
     }
+
+    public void InitializeStat(UserData userData)
+    {
+        if (userData != null)
+        {
+            KingAbilityManager.instance.AdministrativePower = userData.abilities[0];
+            KingAbilityManager.instance.EconomicPower = userData.abilities[1];
+            KingAbilityManager.instance.WarPower = userData.abilities[2];
+
+            PlayStatManager.instance.Briket = userData.states[0];
+            PlayStatManager.instance.Tax = userData.states[1];
+            PlayStatManager.instance.DissatisfyRate = userData.states[2];
+            PlayStatManager.instance.ComfortRate = userData.states[3];
+            PlayStatManager.instance.CrimeRate = userData.states[4];
+            PlayStatManager.instance.TradeRate = userData.states[5];
+            PlayStatManager.instance.Food = userData.states[6];
+
+
+        }
+        else
+        {
+            KingAbilityManager.instance.AdministrativePower = 2;
+            KingAbilityManager.instance.EconomicPower = 2;
+            KingAbilityManager.instance.WarPower = 2;
+
+            PlayStatManager.instance.Briket = 0;
+            PlayStatManager.instance.Tax = 0;
+            PlayStatManager.instance.DissatisfyRate = 2;
+            PlayStatManager.instance.ComfortRate = 0;
+            PlayStatManager.instance.CrimeRate = 2;
+            PlayStatManager.instance.TradeRate = 1;
+            PlayStatManager.instance.Food = 3;
+        }
+    }
+
     public void ObtainKingAbility(KingAbility kingAbility, int add)
     {
         if (kingAbility == KingAbility.AdministrativePower)
