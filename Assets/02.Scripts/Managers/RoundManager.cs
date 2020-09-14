@@ -35,11 +35,14 @@ public class RoundManager : MonoBehaviour
         {
             date_M = GlobalManager.instance.userData.date_M;
             date_Y = GlobalManager.instance.userData.date_Y;
+
+            PlayerSystemManager.instance.InitializeStat(GlobalManager.instance.userData);
         }
         else
         {
             date_M = 12;
             date_Y = 1399;
+            PlayerSystemManager.instance.InitializeStat(null);
         }
         AudioManager.instance.PlayBGMAudio("BGM_BGM");
         StartRound();
