@@ -21,6 +21,10 @@ public class PlayerSystemManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+    }
+
     public void InitializeStat(UserData userData)
     {
         if (userData != null)
@@ -28,6 +32,8 @@ public class PlayerSystemManager : MonoBehaviour
             KingAbilityManager.instance.AdministrativePower = userData.abilities[0];
             KingAbilityManager.instance.EconomicPower = userData.abilities[1];
             KingAbilityManager.instance.WarPower = userData.abilities[2];
+
+            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
             PlayStatManager.instance.Briket = userData.states[0];
             PlayStatManager.instance.Tax = userData.states[1];
@@ -37,13 +43,20 @@ public class PlayerSystemManager : MonoBehaviour
             PlayStatManager.instance.TradeRate = userData.states[5];
             PlayStatManager.instance.Food = userData.states[6];
 
-
+            UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
+            UIManager.instance.SetPlayerStat(PlayState.Dissatisfy, PlayStatManager.instance.DissatisfyRate);
+            UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
+            UIManager.instance.SetPlayerStat(PlayState.Crime, PlayStatManager.instance.CrimeRate);
+            UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
+            UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
         }
         else
         {
             KingAbilityManager.instance.AdministrativePower = 2;
             KingAbilityManager.instance.EconomicPower = 2;
             KingAbilityManager.instance.WarPower = 2;
+
+            UIManager.instance.SetAbilityUI(KingAbilityManager.instance.AdministrativePower, KingAbilityManager.instance.EconomicPower, KingAbilityManager.instance.WarPower);
 
             PlayStatManager.instance.Briket = 0;
             PlayStatManager.instance.Tax = 0;
@@ -52,6 +65,13 @@ public class PlayerSystemManager : MonoBehaviour
             PlayStatManager.instance.CrimeRate = 2;
             PlayStatManager.instance.TradeRate = 1;
             PlayStatManager.instance.Food = 3;
+
+            UIManager.instance.SetPlayerStat(PlayState.Tax, PlayStatManager.instance.Tax);
+            UIManager.instance.SetPlayerStat(PlayState.Dissatisfy, PlayStatManager.instance.DissatisfyRate);
+            UIManager.instance.SetPlayerStat(PlayState.Comfort, PlayStatManager.instance.ComfortRate);
+            UIManager.instance.SetPlayerStat(PlayState.Crime, PlayStatManager.instance.CrimeRate);
+            UIManager.instance.SetPlayerStat(PlayState.Trade, PlayStatManager.instance.TradeRate);
+            UIManager.instance.SetPlayerStat(PlayState.Food, PlayStatManager.instance.Food);
         }
     }
 
