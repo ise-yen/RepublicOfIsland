@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
-            SpawnBuildingPage(Building.Church, 0);
+            SpawnBuildingPage(BuildingType.Church, 0);
     }
 
     public void DisableButton()
@@ -120,7 +120,7 @@ public class UIManager : MonoBehaviour
         eventDataPanel.SetActive(true);
     }
 
-    public void SpawnBuildingPage(Building building, int level)
+    public void SpawnBuildingPage(BuildingType building, int level)
     {
         var go = Instantiate(eventPagePrefab, transform);
         go.GetComponent<EventPage>().InitPage(building, level);
@@ -158,4 +158,4 @@ public class UIManager : MonoBehaviour
     }
 }
 
-public enum Building { Church, Court }
+public enum BuildingType { Church, Court }

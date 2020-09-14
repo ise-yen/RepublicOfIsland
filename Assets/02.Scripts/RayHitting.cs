@@ -36,6 +36,11 @@ public class RayHitting : MonoBehaviour
     private void Update()
     {
         HandleLookAtRay();
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            ClickObject();
+        }
     }
 
 
@@ -49,6 +54,7 @@ public class RayHitting : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             SelectObj = hit.collider.gameObject;
+            hit.transform.GetComponent<Building>().SpawnEventPage();
         }
     }
     private void HandleLookAtRay()

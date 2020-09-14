@@ -7,7 +7,7 @@ public class ChurchBuilt : MonoBehaviour
     public static ChurchBuilt instance;
     public enum ChurchStage { zero, one, two, three }
     public ChurchStage buildingChurchStage = ChurchStage.zero;
-    public GameObject[] churchMesh;
+    public GameObject[] churchMeshes;
 
     private void Awake()
     {
@@ -21,22 +21,28 @@ public class ChurchBuilt : MonoBehaviour
             return;
         }
     }
+
+    private void Initialize()
+    {
+        churchMeshes = GetComponentsInChildren<GameObject>();
+    }
+
     public void LoadCourtUI()
     {
         RayHitting.instance.ClickObject();
         if (RayHitting.instance.SelectObj != null)
         {
-            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.zero])
+            if (RayHitting.instance.SelectObj == churchMeshes[(int)ChurchStage.zero])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.zero);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Church, (int)ChurchStage.zero);
             }
-            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.one])
+            if (RayHitting.instance.SelectObj == churchMeshes[(int)ChurchStage.one])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.one);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Church, (int)ChurchStage.one);
             }
-            if (RayHitting.instance.SelectObj == churchMesh[(int)ChurchStage.two])
+            if (RayHitting.instance.SelectObj == churchMeshes[(int)ChurchStage.two])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Church, (int)ChurchStage.two);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Church, (int)ChurchStage.two);
             }
         }
     }
@@ -79,9 +85,9 @@ public class ChurchBuilt : MonoBehaviour
     {
         if((int)buildingChurchStage < 3)
         {
-            churchMesh[(int)buildingChurchStage].SetActive(false);
+            churchMeshes[(int)buildingChurchStage].SetActive(false);
             buildingChurchStage = buildingChurchStage + 1;
-            churchMesh[(int)buildingChurchStage].SetActive(true);
+            churchMeshes[(int)buildingChurchStage].SetActive(true);
         }
     }
 }

@@ -35,15 +35,15 @@ public class CourtBuilt : MonoBehaviour
         {
             if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.zero])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.zero);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Court, (int)CourtStage.zero);
             }
             if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.one])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.one);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Court, (int)CourtStage.one);
             }
             if (RayHitting.instance.SelectObj == courtMesh[(int)CourtStage.two])
             {
-                UIManager.instance.SpawnBuildingPage(Building.Court, (int)CourtStage.two);
+                UIManager.instance.SpawnBuildingPage(BuildingType.Court, (int)CourtStage.two);
             }
         }
 
