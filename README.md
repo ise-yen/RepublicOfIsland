@@ -7,5 +7,12 @@
 - **투입 인원**  |  4명(기획, **프로그래머** * 2, 모델러)
 - **작업 기간**  |  2020. 07. 01 – 2020. 09. 30 (3개월)
 
-<img width="80%" src="https://user-images.githubusercontent.com/66158433/163710769-c80f856b-ac1f-49b2-a04f-332c963b475e.mp4">
+---
+- 교회 건물 업그레이드
 
+![KakaoTalk_20220417_193024474](https://user-images.githubusercontent.com/66158433/163710885-a74f5598-d167-4930-bf29-278cb47c45d5.gif)
+
+- 법원 건물 업그레이드
+
+![KakaoTalk_20220417_193024474_01](https://user-images.githubusercontent.com/66158433/163710890-a067619b-e0fc-4ca7-8e85-e6beaf2a750c.gif)
+![KakaoTalk_20220417_193024474_02](https://user-images.githubusercontent.com/66158433/163710894-c0b1bc5a-2650-4f69-957d-e1ee4686661d.gif)
